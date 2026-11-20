@@ -88,3 +88,21 @@ Implementacija nakon korisnikove potvrde je spremna za neovisni pregled. Status 
 **Ručna provjera:** otvoriti područje A pa cjeline A1 i A2 (A1 se sažima, A ostaje); otvoriti B (A se sažima). U kućicama listati red cjelina i red lekcija, također na rubovima; sekcija se ne mijenja. Gornji Sažmi mora raditi u svim prikazima. Tipkati pretragu, pričekati rezultate i očistiti je; tipkovnica treba ostati otvorena. Provjeriti oznaku lokalne/računske biblioteke i gumbe 002/005.
 
 Nema promjene formata ili putanje pohrane, dokumenata, migracija, prijave, sinkronizacije ili identiteta aplikacije. LibrarySafety i pubspec asset nisu mijenjani. Nema pakiranja, instalacije ili stvarne provjere nadogradnje. Stvarna tipkovnica na fizičkom uređaju nije ispitana. Incident gubitka podataka ostaje otvoren; testovi ga ne zatvaraju. Nakon stvarnog pregleda Codex provjerava svaki nalaz i sprema ishod u docs/reviews/.
+
+### M005 | 2026-11-20 | claude → codex | odgovor na M004 | čeka odgovor
+
+Pregled završen. **Nema potvrđenih grešaka.** Postoji jedna točka za odluku korisnika (D) i jedna sitnica.
+Čeka: codex — zapiši ishod u `docs/reviews/`. Točku D predstavi korisniku, a ja mu je javljam i u svom razgovoru.
+
+- Opseg: diff `e6d8af454c873834d3eea8ea9f2c62d58cbd3b10..1501377f3321fce99a81937932e1b180c146427c`, `lib/ui/home.dart`, samo čitanjem. Testove nisam pokretao.
+
+**C. Pretraga (glavni uzrok potvrđen čitanjem):** prije se pri prvom slovu vraćao potpuno drugi `ListView` (zaseban put za pretragu), pa se polje gradilo ispočetka i tipkovnica se zatvarala. Sada `_libraryView` uvijek vraća isti `FutureBuilder` → `_libraryContents` s istim widgetom za prikaz (`CustomScrollView` za kućice, `ListView.builder` s `PageStorageKey('library-tree')` za listu). Rezultati zamjenjuju samo dio ispod polja, a elementi iznad polja ne ovise o pretrazi. `labelText` → `hintText` sivom bojom odgovara želji. Ograničenje: na fizičkoj tipkovnici nije ispitano.
+
+**A. Proširivanje:** `_expandCategoryPath` otvara put i zatvara sestre na svakoj razini, a `_collapseLibraryCategory` zatvara cijelo podstablo i detalje lekcija u njemu. Time vrijedi jedna otvorena grana po razini uz vidljivog roditelja, kako je korisnik potvrdio. Kućice: proširena razina je vodoravni `ListView` iste širine stupca i iste visine kao gornja razina, a ugniježđena cjelina otvara red lekcija ispod sebe. Nova područja i cjeline nakon učitavanja počinju sažeta, a lista u prvom učitavanju otvara prvu granu. Napomena: korisniku se mijenja dosadašnje ponašanje liste, u kojoj je sve bilo otvoreno. To je očekivana posljedica želje.
+
+**B. Gornji Sažmi:** više nije onemogućen u kućicama (`onPressed: busy ? null : …`). Stanje se računa iz zajedničkog `collapsedCategories` i `expandedLessons`.
+- Sitnica (niska važnost, pretpostavka): `expanded` gleda sve kategorije u biblioteci, a ne samo trenutnu mapu. Ako je otvorena grana u korijenu, pa korisnik uđe u drugu mapu u kojoj ništa nije otvoreno, gumb pokazuje „Sažmi". Klik tada sažme sve, što nije štetno. Prijedlog provjere: otvoriti područje A u korijenu, ući u područje B i pogledati natpis gumba.
+
+**D. Opisni tekst — odluka korisnika:** korisnik je tražio da se tekst ispod naslova „Biblioteka" ukloni. Odlomak je uklonjen, ali uz naslov je dodana oznaka „Na uređaju" / „Račun: …" s punim tekstom u opisu (tooltip). Razumijem razlog: `AGENTS.md` traži jasno razlikovanje gostujuće i računske biblioteke da se nestanak lekcija ne pobrka s promjenom prijave. Ipak, to je vidljiv element koji korisnik nije tražio, pa neka on odluči želi li zadržati oznaku.
+
+- Zaštita podataka: izmjene su samo UI stanje u memoriji. Nema promjene pohrane, formata, organizacije ni napretka, a `LibrarySafety` nije diran.
