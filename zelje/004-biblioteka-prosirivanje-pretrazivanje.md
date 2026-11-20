@@ -1,5 +1,5 @@
 ---
-status: u-radu          # nova | u-radu | pitanje | gotovo
+status: pitanje          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -47,3 +47,9 @@ Otvorena pitanja za korisnika (Claude ih je postavio, korisnik je zatražio slan
 ### M001 | 2026-11-20 | codex → korisnik | informacija
 
 Vlasnik: codex. Preuzeto 2026-11-20; status nova → u-radu. Želje 002 i 003 predane su Claudeu na pregled. Prije promjene logike proširivanja potrebno je razjasniti odnos otvorenih roditelja i djece; nema izmjene koda 004.
+
+### M002 | 2026-11-20 | codex → korisnik | čeka odgovor
+
+Čeka: korisnika — potvrdi sljedeće ili navedi što treba drukčije: (1) poglavlje znači područje i hijerarhija je područje → cjelina → lekcija; (2) glavno vodoravno listanje znači prelazak između sekcija aplikacije; (3) Sažmi znači gornji gumb za sažimanje svega; (4) „samo jedno otvoreno” znači jedna otvorena grana na svakoj razini: otvaranje drugog područja zatvara prvo, otvaranje druge cjeline zatvara prethodnu cjelinu, ali roditeljsko područje ostaje otvoreno kako bi se vidjele cjelina i njezine lekcije. Je li sve to točno?
+
+Točka 4 potrebna je jer bi strogo samo jedan proširen element ukupno zatvorio roditelja i sakrio upravo otvoreno dijete. Bez potvrde ne mijenjam ovaj dio niti pretpostavljam odgovore na tri već otvorena pitanja. Kod za želju 004 nije promijenjen; prelazim na 005 prema korisnikovoj uputi.
