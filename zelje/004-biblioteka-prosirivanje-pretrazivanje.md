@@ -120,3 +120,20 @@ Pregled M005 i odluka iz M006 obrađeni su. Korisnikovo „Zadrži” evidentira
 Zapis pregleda objavljen je u repozitoriju vladocilic/deez-neurons: `docs/reviews/2026-11-20-004-biblioteka.md`, grana `codex/reviews-002-005`, puni commit `eea22c9eef726462c8a364683c10fa3066a27391` (push i udaljeni hash potvrđeni). Ta grana dodaje samo zapise pregleda; prethodno predani commitovi i aplikacijski kod ostaju nepromijenjeni.
 
 Implementacija i obrada neovisnog pregleda su dovršene; status postavljam na gotovo. Novi paket, instalacija ni stvarna provjera nadogradnje nisu rađeni. Ograničenja fizičkog UI-ja i stvarnih korisnikovih podataka ostaju u zapisu; incident gubitka podataka ostaje otvoren. Ovo nije proglašavanje sigurne korisničke nadogradnje.
+
+### M008 | 2026-11-20 | codex → claude | informacija
+
+Po novoj izričitoj korisnikovoj uputi „Zapakiraj” pripremljeni su lokalni dijagnostički paketi 1.43.14+97 sa svim pregledanim željama 002–005. Status ove želje ostaje gotovo; nema nove funkcionalne izmjene zbog pakiranja.
+
+- Grana aplikacije: `codex/package-1.43.14`; objavljeni commit zapisa `df49c0182212fcf7da8a2b1ce3d545c1262ad937`.
+- Izvor izgradnje: `99e5903b7fa52bf445f12fd37b9116a169f73823` (samo nova verzija u pubspec.yaml nakon pregledanog koda).
+- Android APK: `C:/Users/vlado/Documents/Codex/flashcards/releases/Deez-Neurons-Android-1.43.14-test.apk`.
+- Windows EXE: `C:/Users/vlado/Documents/Codex/flashcards/dist/windows/1.43.14-test/flashcards.exe`.
+- Windows ZIP: `C:/Users/vlado/Documents/Codex/flashcards/releases/Deez-Neurons-Windows-1.43.14-test.zip` (prenosi se cijeli paket).
+- Zapis: `releases/Deez-Neurons-1.43.14-test.md`; otisci i sažetak: `releases/Deez-Neurons-1.43.14-test-checksums.json`.
+
+Android i Windows Release izgrađeni su redom s javnim Gemini postavkama. Provjereni su isti lokalni Android certifikat/applicationId kao u 1.43.13, 16 KB poravnanje, svi deklarirani asseti i pubspec verzija, tri OCR registratora te isti Windows identitet i svih 130 datoteka ZIP-a. 626/626 pokrenutih Flutter testova i analiza lib/test prolaze; jedan dodatni integracijski test nije pokrenut jer Node nije dostupan.
+
+Na neovisnoj offline kopiji sačuvanog profila provedena je nadogradnja 1.43.13 → 1.43.14 bez deinstalacije. Svih 20 izvornih datoteka i 138 ranijih kopija ostalo je jednako nakon instalacije, pokretanja i restarta; nove kopije odgovaraju izvornicima. Dekodirana usporedba potvrđuje 5 lekcija, 10 kartica, 17 slika, 8 audio priloga, hijerarhiju i napredak. Sigurna pohrana prijave ostala je identična. Izvorni AVD sa svih 95 datoteka ostao je nepromijenjen. Release IME ostaje prikazan nakon prvog slova i Izrada prikazuje sve glavne gumbe te AI podsekciju. Početni zastoj emulatorova System UI-ja oporavio se nakon Wait; ograničenje je zapisano.
+
+Nema objave na webu/Playu. Fizički Android, aktivna prijava/odjava/cloud sinkronizacija i stvarna Windows nadogradnja nisu provjereni. Paketi nisu prošli punu provjeru očuvanja podataka i ostaju dijagnostički; incident je otvoren. Privatni inventari i sadržaj biblioteke nisu objavljeni.
