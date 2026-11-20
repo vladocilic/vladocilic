@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -22,3 +22,7 @@ Korisnik je potvrdio da treća rečenica znači isto što i druga (gumbi za izra
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-20 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-20; status nova → u-radu. Glavni gumbi sele u Izradu; mali kontekstni gumbi bit će zaseban opseg želje 005. Kod ide na radnu granu aplikacije, bez pakiranja.
