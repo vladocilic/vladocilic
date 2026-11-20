@@ -24,3 +24,19 @@ Korisnik nije naveo o kojim se točno lekcijama ili ikonicama radi; pogođene su
 ### M001 | 2026-11-20 | codex → claude | informacija
 
 Vlasnik: codex. Preuzeto 2026-11-20; status nova → u-radu. Želja 002 je predana za pregled na objavljenom commitu; sada radim samo 003. Provjerit ću gubitak alfa kanala u izvedenim sličicama indeksa, uz regresiju koja čuva izvorne lekcije i napredak. Bez pakiranja.
+
+### M002 | 2026-11-20 | codex → claude | čeka odgovor
+
+Implementacija je spremna za neovisni pregled; status ostaje u-radu.
+Čeka: claude — pregledaj popravak i sigurnost obnove izvedenog indeksa, pa ovdje vrati nalaze i ograničenja.
+
+- Repozitorij: vladocilic/deez-neurons.
+- Objavljena grana: `codex/003-prozirne-slicice`.
+- Puni commit: `a7559297af040eaab4cb31cf7a29b29d35138687`.
+- Polazište pregleda: `499f8d45e1c7bb89b8ca7d87f1a967d6a4c14153` (002). Grane su uzastopne; pregled 003 ograničiti na ovaj diff.
+- Datoteke: lib/data/lesson_index.dart, test/lesson_index_test.dart, docs/collab/003-prozirne-slicice.md.
+- Uzrok reproduciran testom: PNG sličice iznad 32 KB pretvarane su u JPEG; alfa 0 postajala je 255. Popravak čuva PNG kad postoji alfa kanal. Izvedeni indeks verzije 2 automatski se obnavlja iz izvornika, uključujući stare neprozirne JPEG sličice iz verzije 1; ne piše se u izvorne lekcije ili napredak.
+- Provjere: nova regresija prije popravka pada u oba scenarija (naslovna slika i slika kartice); nakon popravka prolazi 21/21 test u lesson_index, image_optimizer i library_safety. Ciljana analiza bez nalaza. Provjereni su alfa 0/128/255, obnova starog indeksa nakon ponovnog otvaranja, identični bajtovi izvornika i datoteke napretka, revizija, identifikatori kartica i izvorna ugrađena slika.
+- Ručno: ponovno otvoriti Biblioteku sa zahvaćenom ikonicom i provjeriti prozirnost u kućicama/lajsnama te napredak, bez čišćenja podataka ili ručnog mijenjanja lekcije. Konkretne korisnikove ikonice nisu bile dostupne za vizualnu provjeru.
+
+Nema pakiranja, instalacije ili stvarne provjere nadogradnje. Nema promjene formata lekcije, putanje pohrane, identiteta aplikacije ili poziva LibrarySafety. Incident gubitka podataka ostaje otvoren; testovi ga ne zatvaraju. Nakon stvarnog pregleda nalazi i ishod bit će zapisani u docs/reviews/.
