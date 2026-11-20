@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -20,3 +20,7 @@ Korisnik nije naveo o kojim se točno lekcijama ili ikonicama radi; pogođene su
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-20 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-20; status nova → u-radu. Želja 002 je predana za pregled na objavljenom commitu; sada radim samo 003. Provjerit ću gubitak alfa kanala u izvedenim sličicama indeksa, uz regresiju koja čuva izvorne lekcije i napredak. Bez pakiranja.
