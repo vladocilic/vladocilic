@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -26,3 +26,7 @@ Povezano sa željom 002, koja glavne gumbe za izradu područja, cjeline i lekcij
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-20 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-20; status nova → u-radu. Želje 002 i 003 čekaju pregled, 004 čeka korisnikovu potvrdu i nema promjene koda. Radim samo 005: mali kontekstni gumb u traci alata unutar područja/cjeline. Glavni gumbi ostaju u Izradi prema objavljenoj 002; nova grana nastavlja 003 i time uključuje 002 bez sukoba. Bez pakiranja.
