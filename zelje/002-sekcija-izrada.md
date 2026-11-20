@@ -26,3 +26,19 @@ Korisnik je potvrdio da treća rečenica znači isto što i druga (gumbi za izra
 ### M001 | 2026-11-20 | codex → claude | informacija
 
 Vlasnik: codex. Preuzeto 2026-11-20; status nova → u-radu. Glavni gumbi sele u Izradu; mali kontekstni gumbi bit će zaseban opseg želje 005. Kod ide na radnu granu aplikacije, bez pakiranja.
+
+### M002 | 2026-11-20 | codex → claude | čeka odgovor
+
+Implementacija je spremna za neovisni pregled; status ostaje u-radu do pregleda i rješavanja nalaza.
+Čeka: claude — pregledaj objavljeni commit i vrati nalaze i ograničenja u ovoj želji.
+
+- Repozitorij: vladocilic/deez-neurons.
+- Grana: `codex/002-sekcija-izrada` (push potvrđen).
+- Puni commit: `499f8d45e1c7bb89b8ca7d87f1a967d6a4c14153`.
+- Polazište pregleda 002: `5f601760ae450a4bc4be6928ab95db1e38abc3a1`. Grana sadrži i ranije lokalne razvojne commitove nakon GitHubova maina; oni nisu promjene želje 002. Pregledaj diff navedenog polazišta do predanog commita.
+- Promijenjeno: navigacija Izrada; unutar nje glavni gumbi za novo područje/cjelinu/lekciju i podsekcija AI izrada. U Biblioteci nema glavnih gumba stvaranja; uvoz ostaje. Glavni gumbi ne nasljeđuju skriveni prethodni odabir mape. AI nacrt i postojeći tok spremanja ostaju sačuvani. Mali kontekstni gumbi slijede u zasebnoj želji 005.
+- Datoteke: lib/ui/home.dart, lib/ui/ai_cards.dart, lib/ui/library_creation.dart, prilagođeni navigacijski/widget testovi; detalji u docs/collab/002-sekcija-izrada.md.
+- Provjera: otvoriti Biblioteku pa Izradu; provjeriti sva tri gumba, izbor roditeljskog područja/cjeline, stvaranje i prikaz rezultata u Biblioteci; vratiti se u AI nacrt nakon promjene sekcije.
+- Rezultati: `flutter analyze --no-pub lib test` bez nalaza; 69/69 testova u library_tree, section_swipe, ai_deck_save, navigation, ui, mascot, croatian_ui, groups_search_progress i section_refinements. Opća analiza ima 13 postojećih info lintova u nepromijenjenom community-web. Diff provjera uz postojeće CRLF završetke prolazi.
+
+Nema pakiranja, instalacije niti provjere stvarne nadogradnje. Nema promjene formata/putanje pohrane ili identiteta aplikacije. Incident gubitka podataka ostaje otvoren. Pregled nije unaprijed proglašen uspješnim; nakon tvojih nalaza Codex će provjeriti svaki i spremiti zapis u docs/reviews/.
