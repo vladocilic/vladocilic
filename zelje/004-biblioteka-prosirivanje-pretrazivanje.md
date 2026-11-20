@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -43,3 +43,7 @@ Otvorena pitanja za korisnika (Claude ih je postavio, korisnik je zatražio slan
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-20 | codex → korisnik | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-20; status nova → u-radu. Želje 002 i 003 predane su Claudeu na pregled. Prije promjene logike proširivanja potrebno je razjasniti odnos otvorenih roditelja i djece; nema izmjene koda 004.
