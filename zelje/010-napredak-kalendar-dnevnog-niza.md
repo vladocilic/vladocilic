@@ -19,6 +19,10 @@ Dopuna korisnika o „ligi" niza (2026-11-21), doslovno:
 
 > Još jedna stvar za kalendar dnevnog niza. Dakle, trebamo prikazati koliko dana traje taj niz i njegovu kategoriju. U stvari, ako je osoba ispunjala recimo po 5 ponavljanja i svaki dan, i to znači da je dosegnuo određenu boju. Uvijek ćemo gledati tu boju, pokazati, znači onu boju najnižu. Ako je najniža da je imao 3 ponavljanja, onda ćemo prikazivati tu boju. On je znači ta liga, recimo zelena liga. Ili ti ga, ako neko uspjeva održati po 10 ponavljanja dnevno, njega ćemo održati u crvenoj ligi. Znači on svaki dan odradi 10 ponavljanja i on je zaslužio crvenu boju.
 
+Dopuna korisnika o današnjem danu i bojama (2026-11-21), doslovno:
+
+> Tako je, liga se računa tek nakon završenog dana, a kroz dan dobro bi bilo da negdje imamo podsjetnik koji podsjeća korisnika koliko je taj dan dosegnuo i je li mu nedostaje da dosegne onaj nivo koji želi. Isto tako neka boje budu ne one žarke, recimo crvena mora biti boja koja nagrađuje, a ne koja vrišti. I tako ostale koje su pokazuju niže lige trebaju biti nježne, a ne grube i da stvaraju negativan osjećaj.
+
 ## Kako ću znati da je gotovo
 - U sekciji Napredak, iznad posude s kuglicama (želja 008), nalazi se kalendar.
 - Svaki dan u kalendaru obojen je prema broju ponavljanja tog dana:
@@ -30,6 +34,9 @@ Dopuna korisnika o „ligi" niza (2026-11-21), doslovno:
 - Kalendar obuhvaća sve dane od prvog dana korištenja aplikacije na uređaju do danas, koliko god ih bude.
 - Iznad kalendara piše koliko dana zaredom traje trenutni niz.
 - Uz broj dana prikazana je i **liga** niza: boja koja odgovara **najmanjem** broju ponavljanja u bilo kojem danu trenutnog niza (npr. ako je najslabiji dan imao 3 ponavljanja, liga je boje za 3; tko svaki dan napravi 10 ili više, u crvenoj je ligi).
+- Liga se računa samo iz **završenih** dana; današnji dan ne spušta ligu dok traje.
+- Tijekom dana negdje je vidljiv podsjetnik: koliko je ponavljanja danas napravljeno i koliko još nedostaje do željene razine.
+- Boje nisu žarke: crvena djeluje nagrađujuće, a ne napadno; niže lige su nježnih boja koje ne stvaraju negativan osjećaj.
 
 ## Dodatne napomene
 Prijedlog ljestvice za 1–10 (korisnik je dopustio dodati nijanse; konačni izgled neka korisnik potvrdi na testnoj verziji):
@@ -58,7 +65,10 @@ Napomene za izvedbu (Claude):
 - Aplikacija možda ne zna točan dan instalacije. Razumna zamjena je najraniji poznati datum (npr. prvo zabilježeno učenje ili prvo pokretanje). Ako za to treba novi spremljeni podatak, to je promjena pohrane: vrijedi `AGENTS.md` aplikacije (zaštita podataka, bez gubitka postojećeg napretka) i predaja na neovisni pregled.
 - Kalendar od više mjeseci treba ostati pregledan (npr. listanje po mjesecima ili tjednima); odaberi rješenje i zapiši ga.
 - Definirati kada se niz prekida (dan s 0 ponavljanja) i računa li se današnji dan dok još nije bilo učenja.
-- Za ligu: današnji dan, dok traje, vjerojatno ne bi smio spuštati ligu dok korisnik još vježba; odaberi pravilo i zapiši ga (npr. liga se računa iz završenih dana niza, a današnji ulazi tek kad prijeđe dosadašnji minimum ili kad dan završi).
+- Liga se računa iz završenih dana niza (korisnik potvrdio).
+- Podsjetnik: korisnik je rekao „negdje", nije odredio mjesto ni je li to obavijest na mobitelu ili prikaz u aplikaciji. Prijedlog: prikaz u aplikaciji (Napredak i/ili Početna, npr. „Danas: 3 / 5 do Zelene lige"). Obavijesti na mobitelu tražiti tek uz potvrdu korisnika.
+- „Nivo koji želi": nije rečeno je li to razina trenutne lige ili cilj koji korisnik sam odabere. Pitaj korisnika prije izvedbe ako to bitno mijenja rješenje.
+- Boje: prigušene/pastelne nijanse za cijelu ljestvicu (usklađeno s pastelnim kuglicama iz želje 008), crvena topla i nagrađujuća (npr. koraljna), bez agresivnih tonova.
 - Naziv lige je naziv boje (npr. „Zelena liga", „Crvena liga").
 - Ovisi o želji 008 (položaj iznad kuglica); ako se 008 još ne radi, kalendar staviti na vrh Napretka.
 
