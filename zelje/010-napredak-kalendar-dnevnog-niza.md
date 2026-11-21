@@ -11,6 +11,10 @@ Korisnikove riječi (2026-11-21), doslovno:
 
 > Sljedeća želja se odnosi na to da pratimo daily streak. Znači, je li osoba svaki dan vježbala. To ćemo učiniti na način tako što ćemo prikazati kao kalendar na kojem taj dan je označen bojom. Ako nije bilo nijednog ponavljanja, boja će biti bijela. Ako je bilo jedno ponavljanje, bit će svjetlo plava, pa ćemo tako ići na tamno plavu, pa na tamno zelenu, na svjetlo zelenu, pa zeleno žuta, pa naranđasta, pa crvena. Crvena će značiti najveći broj ponavljanja. Možemo to, ne znam koliko sam izbrojao boja, ali može to ići do 10. 10 ponavljanja da bude crvena boja, a 0 ponavljanja je bijela boja. Boje, kako sam ih naveo redom, su između, a ti nadodaj još neku nijansu ukoliko je potrebno. Uglavnom, to je gradacija od plave prema crvenoj. Taj dio praćenja će biti isto u napretku, ali gore iznad ovih kuglica koje će prikazivati sveukupni broj neurona koje smo do sada povezali ili ti ga probudili.
 
+Odgovori korisnika na Claudeova pitanja (2026-11-21), doslovno:
+
+> Pod jedan si dobro shvatio. Pod dva, kalendar prikazuje koliko je god potrebno od dana kada korisnik skine aplikaciju na svoj uređaj, od tada počinje mjerenje dok traje, dok god treba. Pod tri, može pisati iznad kalendara negdje koliko dana za redom je traje taj niz.
+
 ## Kako ću znati da je gotovo
 - U sekciji Napredak, iznad posude s kuglicama (želja 008), nalazi se kalendar.
 - Svaki dan u kalendaru obojen je prema broju ponavljanja tog dana:
@@ -19,6 +23,8 @@ Korisnikove riječi (2026-11-21), doslovno:
   - zatim redom prema većem broju: tamnoplava, tamnozelena, svijetlozelena, zelenožuta, narančasta;
   - 10 ili više ponavljanja: crvena.
 - Iz kalendara se vidi je li se vježbalo svaki dan.
+- Kalendar obuhvaća sve dane od prvog dana korištenja aplikacije na uređaju do danas, koliko god ih bude.
+- Iznad kalendara piše koliko dana zaredom traje trenutni niz.
 
 ## Dodatne napomene
 Prijedlog ljestvice za 1–10 (korisnik je dopustio dodati nijanse; konačni izgled neka korisnik potvrdi na testnoj verziji):
@@ -37,9 +43,15 @@ Prijedlog ljestvice za 1–10 (korisnik je dopustio dodati nijanse; konačni izg
 | 9 | crvenonarančasta |
 | 10+ | crvena |
 
-Otvoreno / pretpostavke (pitaj korisnika ako je potrebno):
-- „Ponavljanje" je pretpostavljeno kao jedno dovršeno učenje lekcije, isto što Napredak već broji kao „dovršena učenja". Provjeri da je to korisnikova namjera.
-- Korisnik nije odredio raspon kalendara (tekući mjesec, zadnjih nekoliko tjedana, listanje po mjesecima) ni prikazuje li se i broj dana u nizu. Odaberi razumno rješenje i zapiši ga; ako treba odluka, postavi pitanje.
+Potvrđeno od korisnika:
+- „Ponavljanje" = jedno dovršeno učenje lekcije (isto što Napredak već broji kao „dovršena učenja").
+- Raspon: od dana kad je korisnik počeo koristiti aplikaciju na uređaju, bez gornje granice.
+- Iznad kalendara prikazati broj dana trenutnog niza zaredom.
+
+Napomene za izvedbu (Claude):
+- Aplikacija možda ne zna točan dan instalacije. Razumna zamjena je najraniji poznati datum (npr. prvo zabilježeno učenje ili prvo pokretanje). Ako za to treba novi spremljeni podatak, to je promjena pohrane: vrijedi `AGENTS.md` aplikacije (zaštita podataka, bez gubitka postojećeg napretka) i predaja na neovisni pregled.
+- Kalendar od više mjeseci treba ostati pregledan (npr. listanje po mjesecima ili tjednima); odaberi rješenje i zapiši ga.
+- Definirati kada se niz prekida (dan s 0 ponavljanja) i računa li se današnji dan dok još nije bilo učenja.
 - Ovisi o želji 008 (položaj iznad kuglica); ako se 008 još ne radi, kalendar staviti na vrh Napretka.
 
 ---
