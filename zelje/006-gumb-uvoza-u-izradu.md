@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -22,3 +22,7 @@ Korisnik je istu stvar spomenuo već u trećoj rečenici želje 002. Ondje je po
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-21 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-21, status nova → u-radu u istom commitu. Ranije želje 002–005 su gotovo; nema drugog aktivnog uređivanja. Premještam postojeći gumb uvoza odmah ispod glavnih gumba u Izradi. Bez pakiranja; aplikacija ide na zasebnu radnu granu.
