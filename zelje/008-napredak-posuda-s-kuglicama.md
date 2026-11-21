@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -35,3 +35,7 @@ Claudeove napomene za snalaženje (provjeri):
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-21 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-21. 007 je predana na objavljenom commitu, sada radim samo 008. Zadržavam postojeće zbrojeve i arhivu obrisanih lekcija; uklanjam prikaz mozga iz Napretka. Kuglice će se iscrtavati po vidljivim redovima, bez ograničavanja ukupnog broja i bez stvaranja widgeta za svaki neuron. Posuda raste s brojem redova i ostaje dio glavnog pomicanja Napretka. Bez promjene pohrane ili pakiranja.
