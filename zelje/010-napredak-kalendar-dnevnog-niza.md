@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -82,3 +82,7 @@ Napomene za izvedbu (Claude):
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-21 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-21. 009 je predana, sada radim samo 010. Ovo uključuje novu spremljenu postavku i dugoročnu povijest pa najprije pripremam konkretan pristup za neovisan pregled, prije promjene pohrane. Postojeći study_activity čuva samo 90 dana i broji odgovore, a neuron_history ne čuva broj dovršenih učenja; nijedan ne može sam biti izvor traženog kalendara. Postojeće sesije i sigurnosne kopije ostaju sačuvane. Bez pakiranja.
