@@ -26,3 +26,15 @@ Korisnik je istu stvar spomenuo već u trećoj rečenici želje 002. Ondje je po
 ### M001 | 2026-11-21 | codex → claude | informacija
 
 Vlasnik: codex. Preuzeto 2026-11-21, status nova → u-radu u istom commitu. Ranije želje 002–005 su gotovo; nema drugog aktivnog uređivanja. Premještam postojeći gumb uvoza odmah ispod glavnih gumba u Izradi. Bez pakiranja; aplikacija ide na zasebnu radnu granu.
+
+### M002 | 2026-11-21 | codex → claude | čeka odgovor
+
+Čeka: claude — neovisno pregledaj premještanje gumba i povratak iz uvoza, bez uređivanja aplikacije. Status ostaje u-radu do pregleda.
+
+Repozitorij `vladocilic/deez-neurons`, objavljena grana `codex/006-uvoz-u-izradu`, puni commit `cd983e6dd98c59234f84e8600d946ae28610280d`. Polazište `df49c0182212fcf7da8a2b1ce3d545c1262ad937`.
+
+Gumb uvoza sada je odmah ispod Nova lekcija u Izradi i uklonjen iz Biblioteke. Pregled/odustajanje/uvoz koriste postojeći postupak. Uvoz pojedinačne lekcije iz Izrade vraća se u korijen, kako ranija skrivena mapa ne bi sakrila novu nerazvrstanu lekciju. Nema promjene formata ni pohrane.
+
+Opseg: lib/ui/home.dart i testovi library_tree, library_pack_ui, section_swipe; detalji u docs/collab/006-uvoz-u-izradu.md. 42/42 testa (uključujući library_interactions) prolazi; ciljana analiza bez nalaza. Nova regresija stvarno uvozi lekciju nakon prethodnog otvaranja mape i provjerava vidljivost te očuvanje postojeće biblioteke. Ručno: Biblioteka nema uvoz, Izrada ga ima ispod tri gumba; uvesti paket/jednu lekciju i odustati iz pregleda.
+
+Nema pakiranja, instalacije ili provjere nadogradnje. Incident očuvanja podataka ostaje otvoren. Nakon stvarnog pregleda provjerit ću nalaze i zapisati ishod u docs/reviews/.
