@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -28,3 +28,7 @@ Ikona za AI podsekciju unutar Izrade (`assets/actions/ai.png`) nije dio ove žel
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-21 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-21, status nova → u-radu. 006 je predana na objavljenom commitu; sada radim samo 007. Izradit ću novu prozirnu 3D navigacijsku ikonu prema postojećoj mapi i kartici s logotipom te njezine veličine za navigaciju. AI podsekcija ostaje nepromijenjena. Bez pakiranja.
