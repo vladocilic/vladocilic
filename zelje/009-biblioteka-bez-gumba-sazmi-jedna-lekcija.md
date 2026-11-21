@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -26,3 +26,7 @@ Gornji gumb je `library-toggle-all` u `_libraryAppearanceControls` (`lib/ui/home
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-21 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-21. 008 je predana, sada radim samo 009. Uklanjam gornji Sažmi/Proširi, ostavljam pojedinačne strelice i mali kontekstni gumb 005. Otvaranje lekcije zatvara prethodnu, bez zapisivanja u biblioteku ili napredak. Bez pakiranja.
