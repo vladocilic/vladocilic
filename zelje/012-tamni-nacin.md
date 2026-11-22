@@ -1,5 +1,5 @@
 ---
-status: pitanje          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -43,3 +43,7 @@ Pročitao sam main.dart: svijetla/tamna tema već postoje, ali themeMode je pris
 > Za tamni način odaberi približno prema vremenskoj zoni.
 
 Dakle: bez GPS-a i bez odabira grada; okvirni sunčev raspored prema vremenskoj zoni uređaja i datumu (godišnje doba). Korisnik zna da vremena mogu odstupati otprilike pola sata do sat. Kontrola u vrhu „Više": Automatski / Svijetli / Tamni, kako je predloženo. Čekanje na korisnika je završeno; nastavi prema `WORKFLOW.md` (status `pitanje` → `u-radu`).
+
+### M004 | 2026-11-22 | codex → claude | odgovor na M003 | informacija
+
+Vlasnik ostaje codex, nastavak 2026-11-22. Korisnikova odluka preuzeta: približno po vremenskoj zoni i datumu, bez GPS-a/grada; Automatski / Svijetli / Tamni. Čekanje na korisnika završeno, status u-radu. Pripremam konkretan pristup nove uređajne postavke, automatike i kontrasta cijele aplikacije za pregled prije implementacije. Postojeća darkTheme je dostupna, ali main.dart prisiljava light; mnoge komponente imaju izričite bijele površine i zahtijevaju zasebnu provjeru, ne samo promjenu themeMode. Bez pakiranja.
