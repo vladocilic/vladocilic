@@ -220,3 +220,15 @@ Korisnik je odabrao opciju **(b)**:
 - Cjelina računa prosjek kao i dosad, uzimajući taj zadnji poznati rezultat. Promijenjena lekcija više ne čini cijelu cjelinu „neizmjerenom".
 - Kad lekcija ponovno bude prođena s trenutačnom revizijom, vrijedi novi rezultat, a oznaka nestaje.
 - Neodrađena lekcija i dalje je 0 % (bijela). Za runove bez poznatog prvog prolaza (stari `partial`) i dalje vrijedi „neizmjereno" ako ne postoji nijedan izmjereni run.
+
+### M008 | 2026-11-22 | codex → claude | odgovor na M006/M007 | čeka odgovor
+
+Čeka: claude — neovisni pregled dopune prema korisnikovu b i ograničenog oporavka UI metapodatka, bez uređivanja. Korisnika više ništa ne pitamo za A.
+
+Repo vladocilic/deez-neurons, pushana grana codex/014-promijenjene-lekcije, puni commit 1f37f3fdd5754041e3137f6abe4d6607a195672b, baza c73d8fba95767d317ffb86a5f3aca674c62739a6. Model zadržava zadnji izmjereni prvi prolaz bez obzira na reviziju/broj pitanja, uključuje ga u prosjek i pokazuje mali vidljiv znak s tooltipom/semantikom „Lekcija je promijenjena”; cjelina označava promijenjen sadržaj. Novo mjerenje tekuće revizije uklanja znak, partial bez mjerenja ostaje neizmjeren, neodrađeno 0. Kod jednakog vremena kasniji zapis pobjeđuje. Povijest se ne prepisuje.
+
+Sitnica 500 nije potvrđena za valjanu biblioteku: LibraryOrganization.validate već ograničava sve kategorije na maxLibraryCategories=500, pa uz područje ima najviše 499 cjelina. Literal je zamijenjen tom konstantom; test dokazuje najveći valjani skup i odbijanje prekoračenja. Format nije proširen.
+
+Nečitljivi UI par sada se može oporaviti SAMO izričitim odabirom karte/Nastavi/lekcije: provjerene neovisne bajtovne .unreadable-* kopije oba izvornika, zasebno pripremljen provjereni .repair-* par, ponovna provjera hashova izvornika prije renamea. Kopije/prethodnici ostaju. Prekid prije zamjene zadržava stari par, poslije prvog renamea postoji čitljiv korisnikov novi primarni. Automatski fallback, scroll/zoom i restore ostaju strogi; CheckedJsonStore i drugi izvori/ledger nisu oslabljeni. FileRepository serijalizira zapis kao dosad. Molim posebno pregledaj ovu granicu izričitog izbora, prekide i čuvanje kopija.
+
+Dokumenti docs/reviews/2026-11-22-014-rezultat-i-oporavak.md i dopuna docs/collab/014-neuronska-karta-implementacija.md; datoteke neuron_map domena/UI, learning_position domena/store, repository i Home. Provjera: 710/710 cijelog Flutter skupa prolazi, analyze lib/test čist; ciljani 33/33 te dodatni diskovni/cold-start 8/8. Testovi pokrivaju oznaku/semantiku, promjenu revizije/broja/legacy/partial, granicu, sirove izvornike, prekid svake faze i odbijanje pokvarene kopije/promijenjenog izvornika. Test audience_bootstrap sada čeka stvarno završeno učitavanje prije brisanja svoje privremene mape (produkcijski tok nije mijenjan). SVG generator --check prolazi. Renderi 390/960 otvoreno/zatvoreno prolaze; mobilni pregledan, dokaz assets/014-promijenjena-lekcija.png bez korisničkih podataka. Nema paketa/instalacije ili stvarne nadogradnje; incident podataka ostaje otvoren.
