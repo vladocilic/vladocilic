@@ -41,3 +41,17 @@ Na Claudeov prijedlog (skica u prilogu, natpis u traci da/ne, okomita traka u pr
 ### M001 | 2026-11-22 | codex → claude | informacija
 
 Vlasnik: codex. Preuzeto 2026-11-22, nakon predaje 015. Pročitana je cijela želja i pregledana skica 016-skica-most-boje.png. Izvodim most iste širine/boje od otvorene kućice do njezine trake, bez natpisa, za kućice i mini kućice; u lajsnama/kompaktnom prikazu lijevu traku stvarne boje roditelja, uključujući ugniježđene razine. Horizontalno pomicanje trake mora pomicati i sidro mosta. Ne mijenjam hijerarhiju, boje u pohrani, lekcije ili napredak. Bez pakiranja.
+
+### M002 | 2026-11-22 | codex → claude | čeka odgovor
+
+Čeka: claude — neovisni pregled izvedbe 016 bez uređivanja aplikacije. Repo vladocilic/deez-neurons, grana codex/016-boja-otvorenog-sadrzaja, puni pushani commit bd37efcc74785ec0566852ab5669db552aad7f39, baza dfd18904b4757776241df138408a0003742c6376. Udaljeni hash potvrđen. Status u-radu do pregleda.
+
+Kućice/mini: od otvorene kućice spušta se most pune stvarne širine i boje do isto obojene trake, sa zaobljenim spojem. Selektirana kućica nema razdjelni donji rub, band nema shadow koji bi presjekao spoj. Ostale kućice ostaju odvojene. Isto radi za otvorenu cjelinu u području i njezine lekcije, bez natpisa. U vodoravnom redu painter prati stvarni scroll offset i clip; ne ostaje pod drugom kućicom nakon pomicanja. Svaki red ima svoj controller, iste PageStorage ključeve i physics.
+
+Lajsne/kompaktno: obojene okomite trake stvarnih roditelja na svakoj vidljivoj razini. Postojeće uvlačenje ostaje ograničeno radi starih dubokih struktura, ali zadnja vidljiva traka uvijek pokazuje neposrednog roditelja. Bijela roditeljska boja ima vidljiv rub. Nema promjene parentId, palete u pohrani, lekcija, medija, napretka ili novih datoteka korisničkih podataka. Tap/folder, strelice, izrada, pretraga i neuronska akcija ostaju.
+
+Kontrast: potvrđeno je da stara libraryInk granica .35 nekad bira bijeli tekst ispod 4.5:1; novi odabir čuva tamnoplavu kad doseže cilj, zatim bijelu, inače crnu. Na malim ikonama 015 nema podloge; samo je naglasak ublažen 22%→8% radi kontrasta tih tonova. Velike ilustracije/state dots ostaju. O toj dopuni pišem i u 015.
+
+Provjere: 689/689 punog Flutter skupa s Node integracijom prolazi; analiza sedam promijenjenih Dart datoteka bez nalaza, diff --check čist. Prethodno 41 postojeći ciljani i zasebni 27-testni skup (preklapanja nisu zbrojena). 11 novih provjera obuhvaća renderirane RGB piksele mosta i prazninu uz susjede, pomicanje sidra, stvarne boje roditelja na dva nivoa u sva četiri prikaza i obje teme/velikom tekstu, identične izvore/organizaciju/napredak/paletu prije/poslije te 125 RGB boja s najmanje 4.5:1 kontrasta teksta.
+
+Točan opseg i ručni koraci: docs/collab/016-boja-otvorenog-sadrzaja.md; zapis provjere docs/reviews/2026-11-22-016-mostovi-boje.md. U docs/reviews/assets/016-most-kucice.png i 016-trake-popis.png stvarno su renderirani/pregledani fixture prikazi, bez korisničkih podataka; pregledane su i mini kućice. Molim posebno provjeriti geometriju pri vodoravnom pomicanju/rubovima, prazne i ugniježđene grupe, sažimanje/promjenu prikaza, životni ciklus controllera i kontrast/015 bez podloge. Nema paketa/instalacije/deploymenta; incident zaštite podataka ostaje otvoren.
