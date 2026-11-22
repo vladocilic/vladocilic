@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -37,3 +37,7 @@ Na Claudeov prijedlog (skica u prilogu, natpis u traci da/ne, okomita traka u pr
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-22 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-22, nakon predaje 015. Pročitana je cijela želja i pregledana skica 016-skica-most-boje.png. Izvodim most iste širine/boje od otvorene kućice do njezine trake, bez natpisa, za kućice i mini kućice; u lajsnama/kompaktnom prikazu lijevu traku stvarne boje roditelja, uključujući ugniježđene razine. Horizontalno pomicanje trake mora pomicati i sidro mosta. Ne mijenjam hijerarhiju, boje u pohrani, lekcije ili napredak. Bez pakiranja.
