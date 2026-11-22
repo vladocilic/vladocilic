@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -24,3 +24,7 @@ Claudeovo prepoznavanje (provjereno pregledom slika, ipak provjeri):
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-22 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-22. 012 čeka korisnički izbor; radim samo 013. Zamjenjujem prikaz maskote u Više postojećim neuronima iz zaglavlja Početne, bez izmjene izvornog PNG-a ili spremljenog odabira šest maskota. Bez pakiranja.
