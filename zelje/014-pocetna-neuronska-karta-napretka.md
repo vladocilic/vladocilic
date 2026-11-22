@@ -13,6 +13,10 @@ Korisnik je želju izrekao u dvije poruke (2026-11-22) uz tri slike i SVG datote
 
 > **2.** Još samo ova stvar, negdje na početnoj kada su otvorene na ovaj način lekcije i cjeline, mora biti gore desno gumbić da izađemo iz tog prozora i da se vratimo u trenutni izgled početne stranice gdje vidimo gumbe za izradu lekcije i za nastavak učenja. A ako kliknemo nastavi učiti, ulazimo opet nazad tamo gdje smo stali. Sada možeš poslati ovu želju.
 
+Odgovori korisnika na Claudeova pitanja (2026-11-22), doslovno:
+
+> Dva lika su ikona te lekcije. Pod dva područja nećemo prikazivati. Ovdje prikazujemo samo cjeline i lekcije. Jezgra neodrađene lekcije može biti bijela. Pod 4 jezgra je prosjek, tako je. I pod 5 najviše glava. Koliko najviše glava ima kad lekcija ima puno pitanja? Pa nema ograničenja.
+
 ## Slike i SVG (priložio korisnik)
 - [`slike/014-neuron-01-otvorena-cjelina.jpg`](slike/014-neuron-01-otvorena-cjelina.jpg) — „neuron 01": otvorena cjelina; dugi akson prema dolje, lekcije se granaju udesno; prva (odrađena) lekcija spojena je na akson, ostale (neodrađene) nisu spojene.
 - [`slike/014-neuron-02-zatvorene-cjeline.jpg`](slike/014-neuron-02-zatvorene-cjeline.jpg) — „neuron 02": zatvorene cjeline kao okomiti lanac neurona, svaka s crtom udesno i natpisom „Ime cjeline".
@@ -26,11 +30,16 @@ Korisnik je želju izrekao u dvije poruke (2026-11-22) uz tri slike i SVG datote
 - Klik na cjelinu je proširi (izgled kao „neuron 01"), drugi klik je sažme.
 - U otvorenoj cjelini lekcije koje su barem jednom odrađene spojene su na akson cjeline, a neodrađene nisu.
 - Klik na lekciju pokreće učenje te lekcije.
+- Iznad crte svake lekcije (i cjeline) prikazuje se njezina ikona (na slikama su to dva lika).
+- Područja se ne prikazuju kao neuroni; prikazuju se samo cjeline i lekcije.
 
 **Boje i oblik**
 - Tijelo neurona cjeline je u boji cjeline, a tijelo neurona lekcije u boji lekcije.
+- Jezgra neodrađene lekcije je bijela.
+- Jezgra cjeline je prosjek naučenosti njenih lekcija.
 - Jezgra je obojena prema postotku naučenog, ljestvicom iz SVG-a: krajnja lijeva tamnoplava = 10 %, krajnja desna crvena = 100 % (lekcija riješena sa svim točnim odgovorima ima crvenu jezgru).
 - Broj „glava" oko tijela: kod lekcije odgovara broju pitanja, kod cjeline broju lekcija (npr. 20 pitanja → 10 dijelova s dvije glave; 5 pitanja → 5 dijelova s jednom glavom). Što je manje pitanja/lekcija, više je dijelova s jednom glavom; što je više, više s dvije. Dijelovi se kombiniraju tako da neuroni izgledaju malo različito.
+- Broj glava nije ograničen: i lekcija s mnogo pitanja ima po jednu glavu za svako pitanje.
 
 **Navigacija**
 - Tap na područje ili cjelinu u Biblioteci prebacuje u Početnu, točno na to područje/cjelinu.
@@ -39,14 +48,16 @@ Korisnik je želju izrekao u dvije poruke (2026-11-22) uz tri slike i SVG datote
 - Gumb „Nastavi učenje" na Početnoj vraća u neuronski prikaz, na mjesto gdje je korisnik stao.
 
 ## Dodatne napomene
-Otvorena pitanja (Claude ih je postavio; korisnik je zatražio slanje bez odgovora na njih — pitaj ga prije izvedbe dijela koji o njima ovisi):
-1. **Dva lika na crti** (muškarac i žena na slikama): što predstavljaju — mjesto za sliku cjeline/lekcije, članove grupe ili nešto drugo?
-2. **Područje:** kako izgleda u neuronskom prikazu? Je li „neuron 02" prikaz jednog područja s njegovim cjelinama, i kako se prikazuje više područja?
-3. **Jezgra ispod 10 %** (neodrađena lekcija): bijela kao `jezgra` u SVG-u?
-4. **Jezgra cjeline:** prosjek naučenosti njenih lekcija?
-5. **Mnogo pitanja:** gornja granica broja dijelova oko tijela (npr. lekcija sa 60 pitanja)?
+Odgovoreno od korisnika:
+1. Dva lika = ikona te lekcije (odnosno cjeline) — prikazuje se njezina stvarna ikona/slika.
+2. Područja se ne prikazuju; samo cjeline i lekcije.
+3. Jezgra neodrađene lekcije je bijela.
+4. Jezgra cjeline = prosjek naučenosti njenih lekcija.
+5. Broj glava nije ograničen.
 
 Napomene (Claude):
+- Budući da se područja ne prikazuju, tap na **područje** u Biblioteci vjerojatno treba prikazati cjeline tog područja na Početnoj (zatvorene, kao „neuron 02"). Ako to nije jasno, pitaj korisnika.
+- Bez ograničenja broja glava: kod vrlo velikog broja pitanja glave će morati biti manje ili gušće raspoređene da neuron ostane čitljiv i da crtanje ostane brzo.
 - Ljestvica ima 10 boja; preslikavanje je pretpostavljeno kao 10 %, 20 %, … 100 % po jednoj boji. Uskladiti s načinom na koji aplikacija već računa naučenost (Napredak, „povezani/probuđeni neuroni").
 - Povezano sa željama 004/009 (ponašanje Biblioteke na tap) i 008/010 (boje u Napretku). Tap na područje/cjelinu u Biblioteci danas otvara mapu u Biblioteci; ova želja to mijenja u skok na Početnu — paziti da se ne izgubi pristup sadržaju mape u Biblioteci (npr. preko strelica proširivanja).
 - „Zadnje mjesto učenja" vjerojatno treba spremati; ako je to novi spremljeni podatak, vrijedi `AGENTS.md` aplikacije i neovisni pregled.
