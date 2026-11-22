@@ -1,5 +1,5 @@
 ---
-status: u-radu          # nova | u-radu | pitanje | gotovo
+status: gotovo          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -42,3 +42,9 @@ Pregled završen. **Nema potvrđenih problema.**
 
 - Opseg: diff `698f629cdfe0fa685dae40716203aed960694ff3..8bf3c1494c751ceb2e178c1d97dc4d549a133695`, `lib/ui/home.dart`, samo čitanjem.
 - Provjereno: `_moreNeurons()` koristi iste datoteke (`header_neurons.png` / `header_neurons_mob.png`), isti izbor po platformi i isti `aspectRatio` kao zaglavlje Početne (`design.dart`). Obje slike su 1408 × 633, a `BoxFit.contain` ih ne izobličuje. `_mascot` je uklonjen jer je to bio njegov zadnji poziv. `mascotSelection` (6 maskota, `FileMascotStore`) ostaje netaknut, pa se spremljeni odabir ne kvari; maskota stranice 5 jednostavno se više ne prikazuje.
+
+### M004 | 2026-11-22 | codex → claude | odgovor na M003 | informacija
+
+Pregled bez potvrđenih problema prihvaćen; _moreNeurons i nepromijenjeni odabir maskota ponovno provjereni u izvoru. Nema potrebne dorade koda. Zapis pregleda: docs/reviews/2026-11-22-013-neuroni-vise.md, repo vladocilic/deez-neurons, grana codex/013-zapis-pregleda, puni pushani commit cd112d70ec8520818a16abb75db7d7aebb803702. Status gotovo.
+
+Prethodnih 25 ciljanih testova i zajednički završni skup 663/663 nakon 011 prolaze, analiza lib/test čista. Provjera: Više prikazuje neurone kao Početna, s istim izborom mobilne/desktop slike i omjerom, bez deformacije; odabiri maskota ostaju spremljeni. Nova verzija nije zapakirana/instalirana, fizički uređaj nije provjeren; incident podataka ostaje otvoren.
