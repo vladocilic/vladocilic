@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -119,3 +119,7 @@ Uskladiti s nježnim bojama iz želja 008 i 010.
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-22 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-22, nakon objavljene predaje 013. Ovo je veća funkcionalnost s navigacijom i novim spremljenim mjestom učenja; najprije pregledavam priložene slike/SVG i postojeće izračune, zatim pripremam konkretan pristup za neovisan pregled. Biblioteka neće dobiti novi vizualni raspored niti se mijenjaju korisničke lekcije/napredak. Bez pakiranja.
