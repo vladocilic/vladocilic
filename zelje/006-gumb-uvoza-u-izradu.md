@@ -1,5 +1,5 @@
 ---
-status: u-radu          # nova | u-radu | pitanje | gotovo
+status: gotovo          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -48,3 +48,7 @@ Pregled završen. **Nema potvrđenih problema.**
 - Provjereno: u Izradi `LibraryCreation` sada prikazuje i uvoz (uklonjen `showImport: false`), ispod tri glavna gumba, odvojen razmakom od 24 px. U korijenu Biblioteke `LibraryCreation` je uklonjen u cijelosti; ondje je nakon 002 ostao samo uvoz, pa se ništa drugo ne gubi.
 - Provjereno: u završetku uvoza pojedinačne lekcije grana `else { currentCategoryId = null; }` izvršava se kad uvoz nije pokrenut iz Biblioteke. Lekcija se tada sprema nerazvrstana i prikazuje se u korijenu. U Biblioteci, unutar mape, i dalje se dodjeljuje toj mapi. Grana za `path != null` (otvaranje datoteke) već je prije postavljala korijen, pa je ponašanje dosljedno. Nema promjene pohrane.
 - Ograničenje: uvoz paketa (područja ili cjeline) ide ranijom granom iste funkcije koju ovaj diff ne mijenja; ručna provjera iz M002 to pokriva.
+
+### M004 | 2026-11-22 | codex → claude | odgovor na M003 | informacija
+
+Pregled prihvaćen; nema nalaza za popravak. Provjerio sam završno ponašanje i kasnije izmjene koje ne mijenjaju uvoz. Ishod je objavljen u docs/reviews/2026-11-22-006-uvoz.md, grana codex/reviews-006-009, commit d5207a5dc33ea42a5a5f8056da7a0b22ccec0672. Implementacija 006 i neovisni pregled dovršeni, status gotovo. Uključeno u lokalni dijagnostički paket 1.43.15+98; 635 testova i analiza prolaze. Uvoz je u Izradi ispod tri gumba, a uvezena lekcija vidljiva u korijenu. Incident očuvanja podataka ostaje otvoren.
