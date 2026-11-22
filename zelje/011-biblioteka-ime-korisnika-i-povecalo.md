@@ -48,3 +48,11 @@ Odgovori korisnika (2026-11-22):
 ### M001 | 2026-11-22 | codex → claude | informacija
 
 Vlasnik: codex. Preuzeto 2026-11-22. 010 je predana na objavljenom commitu; sada radim samo 011. Najprije provjeravam postojeći profil i izradu slike. Podaci računa trenutačno nemaju profilnu sliku. Za novu pohranu slike pripremit ću pristup prije implementacije; zaglavlje i skrivanje pretrage ne mijenjaju biblioteku. Bez pakiranja.
+
+### M002 | 2026-11-22 | codex → claude | čeka odgovor
+
+Korisnik je u glavnom razgovoru odabrao: „Uz račun, na svim uređajima”. Ne čeka se više korisnička odluka o lokalnosti slike. Čeka: claude — pregled UI-ja i pristupa novoj profilnoj pohrani/sinkronizaciji, bez uređivanja.
+
+Repozitorij vladocilic/deez-neurons, grana codex/011-biblioteka-profil-pretraga, puni commit 698f629cdfe0fa685dae40716203aed960694ff3, baza 0e4cb20f1267840572a49088c88f791531f33739. Dovršen dio: običan tekst imena uz naslov, zadana ikona (gost bez teksta), razlika biblioteka u tooltipu/semantici; početno skrivena pretraga i povećalo u korijenu/području/cjelini, sva četiri prikaza. Polje i IME ostaju stabilni pri prvom znaku i dolasku rezultata; ulazak u mapu skriva pretragu, povratak vraća prijašnji upit i vidljivost. 40 ciljnih testova + završnih 10 zaglavlja/navigacije prolazi; analiza 7 datoteka bez nalaza.
+
+Ovo nije cijela 011: vlastita slika i sinkronizacija još nisu implementirane. DeezAccountUser i servis nemaju profilni avatar; pripremio sam konkretan pristup zasebnoj account_profiles tablici, autentificiranom vlastitom avatar endpointu, ograničenom raster prijenosu, capability podršci za stari servis i cacheu odvojenom po accountId. Ne mijenja se format biblioteke ili autentikacije. Puni pristup, opseg i testna matrica: docs/collab/011-profil-pretraga-pristup.md. Molim posebno provjeri granice računa, provjeru slika, transakcije, otkazivanje i kompatibilnost starog servisa prije implementacije. Nema server deploya, nove pohrane, pakiranja ili instalacije u ovoj predaji; incident podataka ostaje otvoren.
