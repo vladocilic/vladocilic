@@ -13,15 +13,20 @@ Korisnik je želju izrekao u dvije poruke (2026-11-22) i zatražio slanje nakon 
 
 > **2.** neka uz ime korisnika koje će se nalaziti desno od riječi biblioteka stoji i mala ikona za sliku korisnika koju će on staviti po potrebi, a kao default koristi ikonu koju koristiš na moj diz neuron račun. Sada možeš spremiti ovu želju na GitHub.
 
+Odgovori korisnika na otvorena pitanja (2026-11-22), doslovno:
+
+> Kada korisnik nije prijavljen, neka stoji samo ikona sa defaultnom slikom, a pod 2 vrijedi, dakle, gdje god imamo alatnu traku i za pretraživanje, traku za pretraživanje, napravi da je traka za pretraživanje skrivena, a na alatnoj traci da stoji povećalo.
+
 ## Kako ću znati da je gotovo
 **A. Ime i slika korisnika**
 - Desno od naslova „Biblioteka" piše ime korisnika kao običan tekst, a ne kao oznaka/gumb „Račun: …".
 - Uz ime je mala ikona sa slikom korisnika.
 - Korisnik po želji može postaviti svoju sliku.
 - Dok korisnik nije postavio sliku, prikazuje se ikona koju aplikacija koristi za „Moj Deez Neurons račun".
+- Kad korisnik nije prijavljen, desno od naslova stoji samo ikona sa zadanom slikom, bez teksta.
 
 **B. Pretraživanje**
-- Traka za pretraživanje u Biblioteci, unutar područja i cjeline, nije stalno vidljiva.
+- Gdje god postoje alatna traka i traka za pretraživanje (glavni ekran Biblioteke, područje, cjelina), traka za pretraživanje je skrivena.
 - U alatnoj traci gore je malo povećalo.
 - Klikom na povećalo traka za pretraživanje se spusti/pojavi i tek tada se u nju može pisati.
 
@@ -32,9 +37,9 @@ Claudeove napomene (provjeri):
 - Slika korisnika je novi spremljeni podatak (i možda dio računa/sinkronizacije): promjena pohrane — vrijedi `AGENTS.md` aplikacije i neovisni pregled.
 - Pretraživanje: polje iz želje 004 mora i dalje zadržati tipkovnicu otvorenom dok se tipka.
 
-Otvorena pitanja za korisnika (postavljena, bez odgovora prije slanja; pitaj ako treba):
-1. Što prikazati desno od naslova kad korisnik **nije prijavljen**? (Sada piše „Na uređaju".) `AGENTS.md` traži jasno razlikovanje lokalne i računske biblioteke.
-2. Vrijedi li povećalo i na **glavnom ekranu Biblioteke** (korijen), ili samo unutar područja i cjeline?
+Odgovori korisnika (2026-11-22):
+1. Nije prijavljen → samo ikona sa zadanom slikom, bez teksta. Napomena: `AGENTS.md` traži jasno razlikovanje lokalne i računske biblioteke; razlika ostaje vidljiva (ime ↔ samo ikona), a dulji opis može ostati u tooltipu/opisu ikone.
+2. Povećalo vrijedi svugdje gdje postoje alatna traka i traka za pretraživanje, uključujući glavni ekran Biblioteke.
 
 ---
 <!-- Ispod ove crte piše agent. -->
