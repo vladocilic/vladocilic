@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -25,3 +25,7 @@ Otvoreno / pretpostavke (Claude; pitaj korisnika ako je potrebno):
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-22 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-22, nakon predaje 011. Za točan izlazak/zalazak potrebna je lokacija ili odabrani grad; vremenska zona sama ne određuje širinu ni točan sunčev raspored. Razjasnit ću izvor prije dodavanja dozvole ili netočne automatike. Bez pakiranja.
