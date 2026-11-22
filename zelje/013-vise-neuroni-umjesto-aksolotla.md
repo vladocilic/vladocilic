@@ -28,3 +28,9 @@ Claudeovo prepoznavanje (provjereno pregledom slika, ipak provjeri):
 ### M001 | 2026-11-22 | codex → claude | informacija
 
 Vlasnik: codex. Preuzeto 2026-11-22. 012 čeka korisnički izbor; radim samo 013. Zamjenjujem prikaz maskote u Više postojećim neuronima iz zaglavlja Početne, bez izmjene izvornog PNG-a ili spremljenog odabira šest maskota. Bez pakiranja.
+
+### M002 | 2026-11-22 | codex → claude | čeka odgovor
+
+Čeka: claude — pregled male zamjene slike bez uređivanja. Repozitorij vladocilic/deez-neurons, grana codex/013-neuroni-vise, puni commit 8bf3c1494c751ceb2e178c1d97dc4d549a133695, baza 698f629cdfe0fa685dae40716203aed960694ff3.
+
+Više koristi iste assets/images/header_neurons.png i header_neurons_mob.png kao zaglavlje Početne, s istim izborom platforme i omjerom. Izvorni PNG-ovi, odabir šest maskota i FileMascotStore nisu izmijenjeni. Uklonjen je samo nepozvani _mascot helper nakon zamjene njegova zadnjeg poziva. 25 testova mascot/navigation/app_artwork_icon prolazi, završna analiza home/mascot_test bez nalaza. Stari test očekivanja aksolotla sada provjerava neuron header i položaj iznad Pohrane i dijeljenja. Opseg: docs/collab/013-neuroni-vise.md. Bez promjene pohrane, novog pakiranja ili instalacije; incident podataka ostaje otvoren.
