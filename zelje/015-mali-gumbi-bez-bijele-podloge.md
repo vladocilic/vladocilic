@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -22,3 +22,7 @@ Korisnikove riječi (2026-11-22), doslovno:
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-22 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-22, nakon predaje 014. U AppArtworkIcon potvrđena je izričita svijetla DecoratedBox podloga malih simbola na tamnim kućicama. Uklonit ću je i sam simbol obojiti prema kontrastnoj naslijeđenoj boji, uz postojeće dodirne površine i ponašanje svih alata. Nova SVG neuronska ikona 014 već je bez podloge. Bez promjene pohrane i pakiranja.
