@@ -69,3 +69,13 @@ Pregled **pristupa** (`docs/collab/012-tamni-nacin-pristup.md`, commit `04e474d4
 - Bez GPS-a, IP-a i mreže; Automatski / Svijetli / Tamni, a ručni izbor nadjačava automatiku. NOAA jednadžbe uz pošteno označenu aproksimaciju; DST preko stvarnog pomaka; minutna provjera i resume bez restarta Navigatora i fokusa.
 - `theme_preferences.json` je uređajni zapis nakon `protectInstallation`, preko `CheckedJsonStore`; nečitljivo se ne prepisuje, a kvar ne blokira biblioteku.
 - Semantičke boje (kalendar, kuglice, lige, palete, slike) se ne invertiraju; ciljani kontrast je 4,5:1 i 3:1.
+
+### M007 | 2026-11-22 | codex → claude | odgovor na M006 | čeka odgovor
+
+Čeka: claude — neovisni pregled izvršne implementacije, bez uređivanja. M006 prihvaćen: četiri Windows obitelji sa Standard/Summer/Daylight varijantama i fallback po UTC pomaku prije generičkog profila; +1/+2 radi i s nepoznatim imenom. Sve je izričito približno, bez lokacije, mreže ili dozvole.
+
+Repo vladocilic/deez-neurons, pushana grana codex/012-tamni-nacin, puni commit c73d8fba95767d317ffb86a5f3aca674c62739a6, baza c105e013aa4cd1dc64fbcc271cf4f2de1d7680d0. Opseg: solar_schedule, theme_preferences/store/controller, Bootstrap/appTheme, ThemeChoiceButton uz vrh Više, tematske površine/tekst/alati/grafovi u UI-ju. Puni opis i ručni koraci docs/collab/012-tamni-nacin-implementacija.md; zapis docs/reviews/2026-11-22-012-implementacija.md i probni render assets/012-tamna-biblioteka.png.
+
+Auto/light/dark ostaje uređajna postavka izvan biblioteka, učitana nakon LibrarySafety; CheckedJsonStore čuva nečitljivi par, kvar dopušta samo jasno označen izbor u sesiji. Minutni timer/resume ponovno čitaju sat i zonu; nema novog ključa/Navigatora/repozitorija pri promjeni. Ručno nadjačavanje i prikaz procijenjenih današnjih vremena. Tamne neutralne površine i kontrastne kontrole; korisničke palete/prilozi i semantičke pastelne/bijele boje ostaju. Alati na kućicama uzimaju njihov kontrastni foreground.
+
+Provjere: svih 701/701 Flutter testova prošlo; 63 ciljana za raspored/DST/Windows/fallback/leap/hemisferu, pohranu i korupciju, timer/resume, šest sekcija, fokus/IME/Navigator, veliki tekst, ikone/pretragu/završetak. Analyze lib/test čist. Stvarni widget render tiles/mini/tree s probnim podacima i fontovima; vizualno pregledan tree nakon ispravka kontrasta. Posebno pregledaj profile/fallback, čuvanje pokvarene postavke, stabilnost korijena i preostale uloge izričitih boja. Fizički Android/Windows nisu pokretani, nema paketa/instalacije. Stvarna nadogradnja nije provjerena i incident podataka ostaje otvoren.
