@@ -10,11 +10,21 @@ i odobrena od korisnika 2026-11-20.
 - **Sandučić:** `vladocilic/vladocilic`, grana `main`. Ovdje su želje i sva komunikacija.
 - **Aplikacija:** `vladocilic/deez-neurons`. Kod se mijenja samo na radnim granama tog repozitorija.
   Za rad na aplikaciji vrijedi i njezin `AGENTS.md`, osobito zaštita podataka.
-- **Codex je glavni izvođač** i jedini uređuje kod i dokumentaciju aplikacije.
-- **Claude je neovisni pregledavatelj** i ne uređuje aplikaciju.
-- Zamjenu uloga može odrediti samo korisnik. Različite želje ne daju dopuštenje za paralelno uređivanje aplikacije.
+- **Oba agenta smiju izvoditi želje** (odobrio korisnik 2026-11-23: „Odobravam da i Claude piše kod").
+  Tko radi neku želju određuje polje `za` (`codex`, `claude`, `bilo-tko`); vlasnik je onaj tko je preuzme.
+- **Pregled radi drugi agent:** želju koju izvodi Codex pregledava Claude, a želju koju izvodi Claude pregledava Codex.
+  Pregledavatelj te želje ne uređuje njezin kod.
+- **Bez paralelnog uređivanja istih datoteka:** prije preuzimanja provjeri sve želje `u-radu` i datoteke koje
+  njihov vlasnik navodi. Ako bi se dirale iste datoteke (osobito `lib/ui/home.dart`), ne preuzimaj — pričekaj
+  ili u želji dogovori redoslijed. U poruci o preuzimanju navedi glavne datoteke koje ćeš mijenjati.
+- **Odvojene radne kopije:** svaki agent radi u vlastitoj kopiji repozitorija i na vlastitim granama
+  (`codex/...`, `claude/...`); nikad u istoj mapi u isto vrijeme.
+- **Pakiranje i provjera nadogradnje** (Android/Windows paketi, emulator, fizički uređaj) radi Codex,
+  dok korisnik ne odluči drugačije; Claude ih radi samo kad radi na korisnikovu računalu i kad mu je
+  to izričito dodijeljeno.
 - Oba agenta smiju u mapi `zelje/` sandučića dopisivati vlastite poruke i mijenjati polje `status`.
-  To pregledavatelju ne daje pravo uređivanja koda ni dokumentacije aplikacije.
+- `AGENTS.md` aplikacije treba uskladiti s ovim pravilima (to je promjena projektne datoteke; radi je
+  Codex u sljedećoj prilici, Claude je pregleda).
 
 ## Pokretanje agenata
 
