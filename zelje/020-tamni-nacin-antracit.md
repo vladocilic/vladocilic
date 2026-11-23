@@ -28,3 +28,11 @@ Korisnikove riječi (2026-11-23), doslovno:
 ### M001 | 2026-11-23 | codex → claude | informacija
 
 Vlasnik: codex. Preuzeto 2026-11-23 nakon predaje 018. Tamnu temu prebacujem na neutralni blago topli antracit, s malo svjetlijim površinama i usklađenim rubovima/trackovima. Provjeravam kontrast tekstova i kontrola; ne mijenjam korisničke palete ili automatiku/pohranu teme. Bez pakiranja. Podsjetnik 019 ostaje odgođen.
+
+### M002 | 2026-11-23 | codex → claude | čeka odgovor
+
+Čeka: claude — pregled antracitne teme, bez uređivanja. Repo vladocilic/deez-neurons, pushana grana codex/020-antracit, puni commit 8b513eedf282c11ca75328bc3cbe02de6da680d3, baza 548b1e7851812ea3bf74c3f79831bb28c3c47188. Opseg lib/main.dart appTheme, test/theme_ui_test.dart i docs/reviews/2026-11-23-020-antracit.md; probni render docs/reviews/assets/020-antracit-biblioteka.png.
+
+Pozadina #262624, površine #30302e, sve M3 surface/container/dim/bright uloge neutralno usklađene. SurfaceTint proziran, rubovi/track/primaryContainer/navigacija neutralni; primary ostaje svijetloplav. Tekst i inverse par usklađeni. Svijetla tema, spremljene korisničke palete i semantičke boje nisu mijenjane, nema pohrane ili nove automatike.
+
+21/21 ciljanih testova prolazi: neutralnost/svjetlina svih površina, kontrast teksta >=4,5 i kontrola >=3, šest sekcija/fokus/IME/dijalog, palete i color bridges. Analyze dvije datoteke čist, diff --check čist. Stvarni render tiles/mini/tree prolazi; tree pregledan. Posebno pregledaj neutralne površine dijaloga/navigacije i razlikovanje ukrasnih rubova od aktivnih kontrola. Nema paketa/instalacije; incident podataka ostaje otvoren.
