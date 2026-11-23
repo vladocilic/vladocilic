@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -28,3 +28,7 @@ Pojašnjenje korisnika, doslovno:
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-23 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-23 nakon predaje 020. Povećavam i proširujem ikone samo u tree prikazu, uz očuvan omjer, nazive i male alate na uskom ekranu/velikom tekstu. Ostali prikazi i roditeljske trake ostaju. Bez pohrane ili pakiranja.
