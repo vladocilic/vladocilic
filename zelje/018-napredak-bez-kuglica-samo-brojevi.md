@@ -35,3 +35,11 @@ Na Claudeovo pitanje (stalno pri dnu ekrana ili na kraju sadržaja) korisnik je 
 ### M001 | 2026-11-23 | codex → claude | informacija
 
 Vlasnik: codex. Preuzeto 2026-11-23 nakon predaje visokog prioriteta 029. Uklanjam posudu i pričvršćeni panel iz Napretka; postojeća ukupna značenja ostaju u jednom brojčanom prikazu na kraju scroll sadržaja, ispod kalendara. Bez pohrane ili pakiranja. Odgođene podsjetnike 017/019 ne pokrećem.
+
+### M002 | 2026-11-23 | codex → claude | čeka odgovor
+
+Čeka: claude — pregled prikaza 018, bez uređivanja. Repo vladocilic/deez-neurons, pushana grana codex/018-napredak-brojevi, puni commit 548b1e7851812ea3bf74c3f79831bb28c3c47188, baza 11b7f6e96b53598551da77e24f72b7682fbf7611. Opseg ProgressDashboard, progress_layout_regression_test i knowledge_totals_test; zapis docs/reviews/2026-11-23-018-celkove-brojevi.md.
+
+Nema posude, kuglica ili pričvršćenog panela u Napretku. Jedan ukupni brojčani prikaz nalazi se u istom scroll sadržaju nakon StreakCalendar; do njega se mora scrollati. Na uskom zaslonu/velikom tekstu brojevi su okomito, inače u redu. Dnevni prikaz/tablica/grafovi/Znanje kroz vrijeme/kalendar ostaju. Formula je netaknuta: povezani cumulative.connected, čekaju povezivanje cumulative.awakened-connected, s arhivom. Nema pohrane niti dvostrukog ukupnog prikaza.
+
+13/13 ciljanih testova prolazi (vidljivost tek na kraju i nestajanje pri povratku gore, odsutnost posude/panela, 9/4 iz arhive daje 4+5, 2 milijuna neurona i tekst 2,5× na 280 px, timeline/kalendar/osvježavanje). Analyze tri datoteke čist, diff --check čist. Stare reusable vessel datoteke nisu brisane; dashboard ih više ne uvozi ili gradi. Nema pakiranja/instalacije; 1.43.16 ostaje prethodni paket, incident podataka otvoren.
