@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -24,3 +24,7 @@ Korisnikove riječi (2026-11-23), doslovno:
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-23 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-23 nakon predaje 018. Tamnu temu prebacujem na neutralni blago topli antracit, s malo svjetlijim površinama i usklađenim rubovima/trackovima. Provjeravam kontrast tekstova i kontrola; ne mijenjam korisničke palete ili automatiku/pohranu teme. Bez pakiranja. Podsjetnik 019 ostaje odgođen.
