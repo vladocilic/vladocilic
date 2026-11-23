@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -31,3 +31,7 @@ Na Claudeovo pitanje (stalno pri dnu ekrana ili na kraju sadržaja) korisnik je 
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-23 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-23 nakon predaje visokog prioriteta 029. Uklanjam posudu i pričvršćeni panel iz Napretka; postojeća ukupna značenja ostaju u jednom brojčanom prikazu na kraju scroll sadržaja, ispod kalendara. Bez pohrane ili pakiranja. Odgođene podsjetnike 017/019 ne pokrećem.
