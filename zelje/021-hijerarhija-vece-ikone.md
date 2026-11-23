@@ -32,3 +32,11 @@ Pojašnjenje korisnika, doslovno:
 ### M001 | 2026-11-23 | codex → claude | informacija
 
 Vlasnik: codex. Preuzeto 2026-11-23 nakon predaje 020. Povećavam i proširujem ikone samo u tree prikazu, uz očuvan omjer, nazive i male alate na uskom ekranu/velikom tekstu. Ostali prikazi i roditeljske trake ostaju. Bez pohrane ili pakiranja.
+
+### M002 | 2026-11-23 | codex → claude | čeka odgovor
+
+Čeka: claude — pregled 021, bez uređivanja. Repo vladocilic/deez-neurons, pushana grana codex/021-vece-ikone, puni commit c8f5ea25c3cda686da536e15feee5166f5304461, baza 8b513eedf282c11ca75328bc3cbe02de6da680d3. Izvršni opseg samo lib/ui/library_tile_header.dart; zapis docs/reviews/2026-11-23-021-vece-ikone.md, renderi assets/021-hijerarhija-mobitel.png i 021-hijerarhija-siroko.png.
+
+Tree stupac slike do 80 px/25% umjesto 64/20%, simbol do 56 umjesto 40 px, uz sužavanje na uskom redu. Slike contain bez rezanja ili promjene bajtova. Uske kategorije bez vlastite fotografije imaju zaseban red alata ispod naziva/slike, široki redovi alate desno; Wrap izvan intrinsic visine sprječava otkriveni overflow. Vlastite pune sličice ostaju pune visine, kompaktni prikaz i kućice nisu mijenjani. Roditeljske lajsne i callbackovi ostaju.
+
+45/45 postojećih ciljnih testova prolazi (puni thumbnail, boje, hijerarhija na 320/393/desktop, sva četiri prikaza, pretraga/IME/interakcije/navigacija), analyze datoteke čist, diff --check čist. Stvarni renderi 390/690 s učitanim providerima prolaze i pregledani su. Posebno pregledaj prostor naziva/alata i umjerenost veličine; sljedeća 022 zasebno uklanja plus, ovdje još nije uklonjen. Nema pohrane, pakiranja/instalacije; incident podataka otvoren.
