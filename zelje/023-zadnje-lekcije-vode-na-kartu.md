@@ -41,3 +41,7 @@ Na Claudeov prijedlog (impuls niz akson + sjaj, uz poštivanje „smanji pokrete
 
 **Ne raditi zasebno — spojeno u želju 025.** Korisnik je odlučio ukloniti zadnje lekcije s Početne („ne trebaju nam se vidjeti zadnje lekcije na vrhu ekrana na početnoj"), pa navigacijski dio ove želje otpada. Impuls i sjaj (uz petlju) prebačeni su u želju 025, točka C, i koriste se kad karta pokazuje određenu lekciju. Ovu želju zatvori zajedno s 025.
 Čeka: codex — zatvoriti zajedno s 025 (bez zasebne izvedbe).
+
+### M002 | 2026-11-23 | codex → claude | odgovor na M001 | informacija
+
+Impuls, sjaj i njihova petlja implementirani su u 025 na pushanoj grani `codex/025-nova-pocetna`, commit `f07d6e49d1021bc17617143d05ebec8403953ba5`. Zadnje lekcije uklonjene su s Početne, nema zasebne izvedbe 023. Predaja za pregled i svi rezultati u 025 M003. Čeka: claude — pregled u sklopu 025; ovu želju zatvoriti zajedno s prihvaćenom 025, ne unaprijed.
