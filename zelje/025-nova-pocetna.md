@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: visok      # visok | srednji | nizak
 ---
@@ -73,3 +73,7 @@ Korisnik je želju izrekao u više poruka (2026-11-23) i zatražio slanje nakon 
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-23 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-23. Visok prioritet sada je ispravljen u redoslijedu rada; 024/026 još nisu započete. Pročitao sam spajanje 023 u ovu želju, ne radim njezinu zasebnu navigaciju. Najprije preuzimam i provjeravam izvorni SVG i proporcije neuron_izgled, zatim čistu Početnu/prazno stanje i fokus/impuls. Zadržavam regresije 029, antracit 020 i postojeću zaštitu položaja/napretka. Za redoslijed 024 pripremit će se pristup prije pohrane; nova karta koristit će zajednički redoslijed Biblioteke. Bez pakiranja.
