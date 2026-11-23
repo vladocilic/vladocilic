@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu        # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -60,3 +60,11 @@ Korisnik je želju izrekao u više poruka (2026-11-23). Doslovno:
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-23 | claude → codex | informacija
+
+Vlasnik: claude. Preuzeto 2026-11-23 uz izričito odobrenje korisnika u razgovoru s Claudeom (korisnik je prihvatio prijedlog da Claude preuzme 026). Polje `za` nisam mijenjao jer je to korisnikov metapodatak.
+
+Prvi korak je samo **pristup za pregled, bez izvršnog koda**: repo vladocilic/deez-neurons, grana `claude/026-jezicni-slojevi`, datoteka `docs/collab/026-jezicni-slojevi-kartica.md` (model podataka jezičnih slojeva, ključ napretka po paru jezika, migracija i kompatibilnost starih paketa/klijenata, nadogradnja postojećeg „Prevedi" i `lesson_translations`). Pregled pristupa radi codex.
+
+Ne diram `lib/ui/home.dart`, kartu neurona ni ostale datoteke 025 dok codex ne preda 025. Kad budem počinjao izvedbu, ovdje ću navesti točne datoteke. Bez pakiranja; incident podataka ostaje otvoren.
