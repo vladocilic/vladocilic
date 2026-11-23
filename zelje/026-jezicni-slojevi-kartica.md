@@ -1,0 +1,62 @@
+---
+status: nova          # nova | u-radu | pitanje | gotovo
+za: codex             # claude | codex | bilo-tko
+prioritet: srednji    # visok | srednji | nizak
+---
+
+# 026 — Jezični slojevi kartica: prijevod bez dupliciranja, jezici po području, napredak po paru jezika
+
+## Što želim
+Korisnik je želju izrekao u više poruka (2026-11-23). Doslovno:
+
+> **1.** Ok, sad imamo još jedan problem koji trebamo riješiti. Dakle, tiče se učenja stranih jezika, ali isto tako moći će se primijeniti i kod kartica koje neko želi prevesti na svoj jezik. Znači, sljedeća stvar. Za strane jezike želim napraviti jedan tečaj koji će sadržavati A1, A2, B1, B2 i C1, C2. I želim da se prevođenje stranih jezika napravi tako da se prevede samo tekst i da kartica može povući samo tekst i zamijeniti željeni tekst, na primjer ako je pitanje na hrvatskom, ako ga želimo zamijeniti na njemački, da kartica povuče samo taj tekst, a ne da dupliciramo i radimo novi set kartica koji otežava, koji zauzima prostor, duplicira slike itd. Kako bi to najjednostavnije mogli uraditi? Da korisnici mogu samo povlačiti tekstove, ja ću reći kodeksu da mi prevede sve te tekstove, ili ako neko prevodi karticu sam, da mu se spremi taj tekstualni dokument i da on po potrebi može povući jezik koji želi, na kojem želi da su njegove kartice.
+
+> **2.** Znači, napredak ne bi trebao ostati isti. Ako promijenimo jezik, da učimo sa hrvatskog učili smo do sada njemački, a sad želimo na francuski, to bi trebao biti drugi napredak. To bi znači trebalo biti učenje francuskog.
+
+> **3.** Što se tiče biranja jezika, mislim da bi trebala svako područje imati opciju da izabere se, pogotovo za strane jezike, da se izabere jezik s kojeg se uči i koji se jezik uči. Što se tiče zvuka, zvuk vučemo automatski Android zvuk. Znači mi imamo opciju da se može snimiti zvuk, ali kartice povlače zvuk uređaja. Ako prijevod ne zna neka... Da, može. Po 3 tvoj prijedlog je dobar. Po 4 može i pod 4 kako si rekao. Ono što može biti problem je da ako neko uzme cijeli tečaj jezika i onda želi ubaciti dodatno neke kartice, da moramo pripaziti da se ne bi poremetio kod prevođenja, da se ne bi poremetio redoslijed, da ne bi išli odgovori i pitanja tamo na pogrešna mjesta. Dakle, trebalo bi ih nekako indeksirati. A što se tiče novih ubačenih kartica, tu sam otvoren za tvoje prijedloge.
+
+> **4.** Sve mi odgovara. Znači, hoćemo li onda sada hoćemo li popraviti i onu opciju prevođenja kartica? Dakle, kad se klikne prevedi i kad automatski prevedemo tekstove kartica, da se samo duplicira tekst, u stvari ne duplicira, nego da se tekst prevede i da se spremi taj zasebni tekst i da od tada korisnik može birati hoće li taj tekst prevedeni ili izvorni ili neki treći koji je možda prije preveo i uveo u karticu. Možda bi trebali razmisliti o tome da nam neko može za određene kartice samo poslati prijevod, ali ostavimo to za kasnije.
+
+(Prijedlozi na koje se korisnik poziva — „po 3", „pod 4", indeksiranje i nove kartice — Claudeovi su i opisani su niže; korisnik ih je sve prihvatio.)
+
+## Kako ću znati da je gotovo
+**A. Jedna kartica, više jezika teksta**
+1. Kartica postoji samo jednom (isti ID, slika, priloži); uz nju se spremaju **samo tekstovi** pitanja i odgovora na više jezika („jezični slojevi").
+2. Slike i drugi priloži se **nikad ne dupliciraju** zbog prijevoda.
+
+**B. Biranje jezika po području**
+3. Svako područje u svom izborniku ima izbor **„Jezik s kojeg učim"** (npr. hrvatski) i **„Jezik koji učim"** (npr. njemački); pitanje se prikazuje na prvom, odgovor na drugom. Moguće je i „oba na istom jeziku" (samo prijevod vlastitih kartica).
+4. Ako za neku karticu nema prijevoda na odabrani jezik, prikazuje se izvorni tekst s malom oznakom **„nije prevedeno"**.
+
+**C. Napredak po paru jezika**
+5. Napredak, kalendar (010), neuroni i karta (014/025) vode se **zasebno za svaki par jezika** (npr. hrvatski → njemački i hrvatski → francuski su dva različita učenja). Povratak na prethodni par vraća njegov napredak netaknut.
+
+**D. „Prevedi" bez dupliciranja**
+6. Postojeća opcija **„Prevedi"** (izbornik kategorije/lekcije) više ne stvara kopiju lekcija, nego prevede tekstove i **spremi ih kao novi jezični sloj** istih kartica.
+7. Nakon toga korisnik može birati: izvorni tekst, taj prijevod ili bilo koji drugi jezik koji je ranije preveden ili uvezen.
+
+**E. Ručni prijevod, uvoz i izvoz teksta**
+8. Korisnik može u uređivaču kartice sam dodati ili ispraviti prijevod za neki jezik.
+9. Aplikacija može **izvesti samo tekstove** lekcije/područja u malu datoteku (svaki tekst s ID-om kartice) i **uvesti** prevedenu datoteku kao jezični sloj — tako vlasnik može dati Codexu da prevede cijeli tečaj.
+
+**F. Indeksiranje i kartice koje korisnik ubaci**
+10. Prijevodi su vezani uz **stalni ID kartice**, nikad uz položaj. Umetanje, brisanje ili premještanje kartica ne može pomiješati pitanja i odgovore. Pri uvozu se spaja po ID-u; nepoznati ID se prijavljuje i ništa se ne upisuje nasumično.
+11. Kartica koju korisnik sam doda u tuđi tečaj dobiva svoj ID i oznaku **„moja"**; tekst unosi na jezicima koje zna; za ostale jezike vrijedi „nije prevedeno"; aplikacija pamti iza koje je kartice umetnuta.
+12. Kad autor objavi novu verziju tečaja, aplikacija spaja po ID-u: autorove kartice se ažuriraju, korisnikove ostaju netaknute i na svom mjestu, a napredak se ne gubi.
+
+**G. Zvuk**
+13. Kartice koriste **glas uređaja (TTS)**, a glas **prati jezik strane** koja se čita (njemački tekst — njemački glas, francuski — francuski).
+14. Snimljeni zvuk (kad postoji) pripada jeziku na kojem je snimljen; za druge jezike koristi se glas uređaja.
+
+**H. Dijeljenje**
+15. Kad se područje ili tečaj dijeli ili izvozi, putuju i svi jezični slojevi; primatelj sam bira jezike.
+
+## Dodatne napomene
+- Ovo je **promjena formata lekcije, organizacije i napretka** te sinkronizacije: vrijedi `AGENTS.md` aplikacije. Prvo pripremiti **pristup za Claudeov pregled** prije promjene pohrane. Stari paketi i stare verzije aplikacije moraju se i dalje moći otvoriti (novi podaci opcionalni); postojeći napredak se nakon nadogradnje veže uz dosadašnji (izvorni) par jezika i ne gubi se.
+- **Postojeće rješenje:** aplikacija već ima „Prevedi" u izborniku (`translate(...)` u `lib/ui/home.dart`) i na serveru tablicu `lesson_translations` (`community-web/node/schema.sql`). Provjeri kako sada radi (vjerojatno stvara kopiju) i **nadogradi ga**, umjesto da se gradi drugo, usporedno rješenje. Postojeće prevedene kopije se ne brišu bez korisnikove odluke.
+- Napredak po paru jezika: ključ napretka postaje (kartica/lekcija + par jezika); povezati s 010 (ledger), 014/025 (karta), 024 (redoslijed).
+- Korisnik je za kasnije spomenuo da bi netko mogao poslati prijevod samo za određene kartice — to nije dio ove želje (vidi podsjetnik 028).
+
+---
+<!-- Ispod ove crte piše agent. -->
+## Bilješke agenta
