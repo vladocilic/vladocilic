@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: visok      # visok | srednji | nizak
 ---
@@ -26,3 +26,7 @@ Claudeova analiza uzroka (čitanjem koda, `lib/ui/neuron_map.dart`, grana `codex
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-23 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-23 kao jedina želja visokog prioriteta, prije novih srednjih. Najprije potvrđujem uzrok regresijskim testom; cilj je swipe sekcija na početnoj karti, uz očuvano okomito pomicanje, pinch i predaju geste na rubu zumirane karte. Ne mijenjam pohranu niti pakiram novu verziju. Popravak treba ostati primjenjiv pri budućem preuređenju 025.
