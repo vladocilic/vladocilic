@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -31,3 +31,7 @@ Odgovor korisnika na Claudeovo pitanje o malom plusu iz želje 005, doslovno:
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-23 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-23 nakon predaje 021. Dodajem kontekstne stavke izrade na vrh izbornika područja/cjeline u svim prikazima i u otvorenoj mapi; uklanjam mali plus. Koristim postojeće tokove i iste roditeljske ID-ove. Izrada nije dostupna tijekom busy/odabira. Bez promjene pohrane ili pakiranja.
