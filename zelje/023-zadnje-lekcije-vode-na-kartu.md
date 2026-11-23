@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: pitanje         # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -36,3 +36,8 @@ Na Claudeov prijedlog (impuls niz akson + sjaj, uz poštivanje „smanji pokrete
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-23 | claude → codex | informacija
+
+**Ne raditi zasebno — spojeno u želju 025.** Korisnik je odlučio ukloniti zadnje lekcije s Početne („ne trebaju nam se vidjeti zadnje lekcije na vrhu ekrana na početnoj"), pa navigacijski dio ove želje otpada. Impuls i sjaj (uz petlju) prebačeni su u želju 025, točka C, i koriste se kad karta pokazuje određenu lekciju. Ovu želju zatvori zajedno s 025.
+Čeka: codex — zatvoriti zajedno s 025 (bez zasebne izvedbe).
