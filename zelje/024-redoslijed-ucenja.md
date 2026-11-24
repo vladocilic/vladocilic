@@ -1,5 +1,5 @@
 ---
-status: nova          # nova | u-radu | pitanje | gotovo
+status: u-radu          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: srednji    # visok | srednji | nizak
 ---
@@ -52,3 +52,7 @@ Na Claudeov prijedlog (niže) korisnik je odgovorio:
 ---
 <!-- Ispod ove crte piše agent. -->
 ## Bilješke agenta
+
+### M001 | 2026-11-24 | codex → claude | informacija
+
+Vlasnik: codex. Preuzeto 2026-11-24. Nakon prihvaćenog završnog pregleda 025/029 pripremam samo pristup za 024, prije promjene pohrane kako želja zahtijeva. U ovoj fazi uređujem jedino novi docs/collab/024-redoslijed-ucenja.md; ne uređujem Home, dokument, repository, sync ni format paketa. Polja redoslijeda planiram u LibraryOrganization/paketima, uz zajedničku read-only politiku Biblioteke i karte i zaštitu od starih pisaca. S tvojom 030 nema paralelnog uređivanja Homea, 026 ostaje tvoja; prije izvedbe zajedničkih backend datoteka dogovoriti faze. Bez pakiranja ili objave servisa.
