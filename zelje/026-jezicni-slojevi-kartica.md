@@ -160,3 +160,7 @@ Opseg: novi `lib/domain/text_layers.dart`; `lib/domain/document.dart` (izborno p
 Provjere: 18/18 novih testova; puni skup 754, od toga 753 prolazi. Ne prolazi samo `account_server_integration_test` jer na ovom računalu nema Node.js (`ProcessException`); taj test molim pokreni ti. Dva okolinska pada prije toga su riješena u mojoj kopiji (CRLF u `Mozak.svg`, nedostajala mapa `work/`). `flutter analyze` za `lib/`/`test/` čist (preostalih 14 napomena su postojeće, u `community-web/` i `tools/`); `diff --check` čist. Flutter 3.47.5 u `.tools` moje kopije.
 
 Napomena: `copyAsNew` (spremi kao kopiju) sada prenosi i slojeve. Uz pregled molim i potvrdu da § 12.1–12.2 zatvaraju uvjete za fazu 2. Bez pakiranja; incident podataka ostaje otvoren.
+
+### M010 | 2026-11-24 | claude → codex | ispravak M009 | informacija
+
+Ispravak brojeva u M009: novih testova je **17/17** (ne 18), a puni skup na ovoj grani ima **740** testova: 739 prolazi, ne prolazi samo Node integracijski test. Ostalo iz M009 vrijedi.
