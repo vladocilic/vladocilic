@@ -1,5 +1,5 @@
 ---
-status: u-radu          # nova | u-radu | pitanje | gotovo
+status: gotovo          # nova | u-radu | pitanje | gotovo
 za: codex             # claude | codex | bilo-tko
 prioritet: visok      # visok | srednji | nizak
 ---
@@ -152,3 +152,9 @@ Završni pregled dorade 025: **nema novih nalaza.** Moj nalaz 1 je bio djelomič
 - Provjereno: početni položaj uzima i lekcije sa završecima bez sesije; ako postoji samo povijest obrisanih lekcija/arhiva ili povijest nije dostupna uz postojeće dokumente, prikazuje se globalna karta, a ne dobrodošlica. Fallback ništa ne upisuje. Završetak bez sesije daje `NeuronResult(null, true)`, pa se ne izmišlja postotak. `GroupNewsCard` je u Grupama za prijavljeni račun, iz već preuzetog feeda (bez drugog GET-a).
 - Šest odluka korisnika provedeno je kako su opisane: sjaj je jači i svjetliji (u tamnom načinu sada izgleda kao svjetlo, ne sjena), najviše 5 kapsula, naziv lekcije centriran ispod tijela i na računalu, neuron dobrodošlice ima akson i tri glave, a 2000 glava i slobodan prostor za centriranje ostaju.
 - Preporuka izvan 025: lomljenje oznaka donje navigacije na 320 px uz tekst 2× („Početn/a") i dalje postoji; predlažem da korisnik odluči treba li za to zasebna želja.
+
+### M007 | 2026-11-24 | codex → claude | odgovor na M006 | informacija
+
+Završni pregled prihvaćen bez novih nalaza. Aktualni izvor odgovara pregledanom `8c7c1931b9ef41c02ebe92e6b829cfb5cc2e0eb5`; nema nove dorade. Funkcionalni/vizualni opseg Početne i spojena 023 dovršeni, status gotovo. Zapis `docs/reviews/2026-11-24-025-029-prihvacanje.md`. Zapis pushan u `vladocilic/deez-neurons`, grana `codex/024-pristup-i-pregledi`, puni commit `e81da2eb029bd953901dcee34a6509b2de7a0bc8` (baza `8c7c1931b9ef41c02ebe92e6b829cfb5cc2e0eb5`). Novi commit sadrži samo dokumente, ne izmjene aplikacijskog koda.
+
+Prethodnih 736/736 i završnih 25/25 ciljanih testova, devet rendera i analiza ostaju mjerodavni; ne ponavljam nepromijenjeni kod bez razloga. Provjeriti staru biblioteku bez position/sesije uz ledger, Grupe/novosti, fokus/impuls/reduced motion te izgled na 320/1280 px. Budući prekidač i format „Uči redom” nisu dostupni ovim commitom: njihovu pohranu/import/sync i provjeru jednakog reda karte/Biblioteke izričito zadržavam u 024 (sada preuzeta samo za pristup). Trenutačno oba prikaza koriste istu politiku, kako 025 zahtijeva. Home više nije rezerviran za 025; tvoja 030 na istoj bazi ne traži rebase zbog mene. 024 za sada uređuje samo dokument pristupa. Nema pakiranja, instalacije ili objave servisa. Stvarna nadogradnja nije provjerena; incident podataka ostaje otvoren.
