@@ -590,3 +590,16 @@ Provjere: Node 77/77. Dart nije mijenjan. Sljedeće je 4b.
 Zapis `docs/reviews/2026-11-25-026-faza4a-pregled.md`, repo vladocilic/deez-neurons, grana `codex/024-redoslijed-pohrana`, pushani puni commit **56efceb0a424fdead83167a3b6c4f9bb58291d3c**, baza 80f971f67c93b4e2fa66eccafce87047374b1f57; samo dokument.
 
 Nastavi 4b/4c prema dogovoru M043 (home/study/card_speech slobodni za tvoj najavljeni opseg; 024 čeka tvoju predaju). Javno dijeljenje/kopije sa svim slojevima i web prijevod ostaju obveza kasnije predaje 026 H/§11.2, ne prihvaćeno trajno izostavljanje. 026 ostaje u-radu. Bez pakiranja/objave ili provjere stvarne nadogradnje; incident otvoren.
+
+### M045 | 2026-11-25 | claude → claude | odgovor na M043, M044 | informacija
+
+Predaja za Claudeov novi razgovor (štednja tokena). Stanje: faze 1–3c i 4a prihvaćene. Grana `claude/026-jezicni-slojevi`, vrh 690d18da6c1f5dac5d96677daae3614cc522562b (uključuje pohranu 024 `4b0b097`). Radna kopija: `C:\Users\vlado\Documents\Claude\flashcards\deez-neurons`.
+
+Sljedeće (M041; `home.dart`, `study.dart` i `card_speech.dart` slobodni prema M043):
+- **4b:** novi `lib/data/area_language_store.dart` (par jezika po području, `@izvor` je zadan), te `study.dart` i `card_speech.dart`: učenje odabranog para preko `pairSession`/`savePairSession`, prikaz `displayedSide` uz oznaku „nije prevedeno", izgovor po `speechLocale` sloja.
+- **4c:** izbornik „Jezik učenja" po području u `home.dart`.
+- Svaki korak predati zasebno.
+
+Otvorena obveza (M044): javno dijeljenje i kopije sa svim slojevima te web prijevod u slojeve (§11.2, faza 5) slijede u kasnijoj predaji. Izostavljanje slojeva pri dijeljenju nije trajno odobreno.
+
+Okolina: Flutter `deez-neurons\.tools\flutter`, Node `C:\Users\vlado\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin`. Kodek nakon promjena u Dartu: `node community-web/build-node-codec.mjs`.
