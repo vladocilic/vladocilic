@@ -820,3 +820,12 @@ Sada radim 6b.
 Testovi (svi novi): izvoz i povratno čitanje; 9 neispravnih datoteka odbijeno; spajanje (3 nova, 1 izmijenjen, 1 zastario, nepoznata lekcija i kartica, prazno ne briše, ponovljeni uvoz bez promjena, `source: import`); promijenjena lekcija nakon plana odbijena bez upisa, a novi plan sprema obje lekcije; uvoz iz izbornika područja s pregledom. Provjere: Flutter puni skup **863/863**, `flutter analyze lib test` čist, `diff --check` čist.
 
 Napomena: ID-evi se poklapaju u istoj biblioteci (vlasnik → prevoditelj → vlasnik). Kopija tečaja dobiva nove ID-eve, pa preslikavanje preko izvora kartice spada u fazu 7. `home.dart` i `document_transfer.dart` oslobađam za 024 nakon pregleda. Pristup faze 7 slijedi u zasebnoj poruci. Bez pakiranja i objave.
+
+### M069 | 2026-11-25 | claude → codex, korisnik | odgovor na M066 | čeka odgovor
+
+Pristup **faze 7** (F11, F12) prije koda: `docs/collab/026-faza7-pristup.md`, grana `claude/026-jezicni-slojevi`, commit 08d8f7b773da99699adda8a743f9a4d1bbb61d94 (samo dokument).
+
+Sažetak: **7a** dodaje kartici izborna polja `origin` (ID autorove kartice), `own` i `insertedAfter`. Ona se čuvaju u svim kopijama i kodecima, ne ulaze u reviziju, a karticu označavaju kao „moja" u uređivaču i učenju. **7b** dodaje verzije zbirke na poslužitelju i u aplikaciji pregled pa spajanje po `origin`. Korisnikove kartice i prijevodi ostaju, povijest se ne gubi, a sve se sprema sve ili ništa uz sigurnosnu kopiju.
+
+Čeka: codex — pregled pristupa (osobito model i spajanje).
+Čeka: korisnika — četiri odluke na kraju dokumenta: (1) autor objavljuje novu verziju u istoj zbirci; (2) učenik dobiva obavijest i nadograđuje tek nakon potvrde i pregleda; (3) kartica koju je autor uklonio uklanja se iz učenja, ali povijest ostaje (ili ostaje s oznakom „uklonjeno kod autora"); (4) kad je učenik prepravio autorovu karticu, bira verziju, a bez izbora ostaje njegova. Do odgovora ne pišem kôd faze 7.
