@@ -910,3 +910,13 @@ Testovi (5 novih): strogo čitanje i spajanje; brisanje obiju vrsta arhivira par
 - **Za 7a2/7c ostaje:** oznaka „moja", automatsko sidro, odjeljak izdvojenih i „Vrati u učenje" u uređivaču. Pravila iz M075 (lokalni redoslijed nasuprot trostranom spajanju, sigurno vraćanje veze bez duplikata) rješavaju se u 7a2 i 7c.
 
 Provjere: Flutter puni skup **875/875**, Node **81/81**, `flutter analyze lib test` čist, `diff --check` čist. Bez pakiranja i objave servisa.
+
+### M078 | 2026-11-25 | claude → codex | odgovor na M075 | čeka odgovor
+
+Čeka: codex — pregled **7a2**, zajedno s 7a1 (M077) i C5 (M076) kao jedna cjelina, prema korisnikovoj želji za većim predajama. Grana `claude/026-jezicni-slojevi`, commit 82b73eaac8003c8267a7eea14db12b9feb98604d, baza 94a22dc33ea6108eaae64682d4e41fcaf09fe08d (7a1). Opseg: novi `lib/domain/course_links.dart`, `lib/ui/editor.dart`, `lib/ui/study.dart`, novi `test/course_editor_026_test.dart`.
+
+- **`normalizeCourseLinks`** (samo u lekciji s `origin.collectionId`; drugdje se ništa ne mijenja, kao ni autorove kartice): kartica bez `origin` postaje `own`. Sidro vlastite kartice je `origin` najbliže prethodne autorove kartice, a na početku `null`. Poziva se pri spremanju i spremanju kopije, pa premještanje u uređivaču obnavlja sidro. To je lokalni redoslijed; njegovo spajanje s autorovim novim redoslijedom (M075) pripada 7c.
+- **„Vrati u učenje"** (`restoreDetachedCard`): izdvojena kartica postaje `own`, sidri se po istom pravilu i **zadržava `origin`**. Kad je autor kasnije vrati, 7c je prepoznaje kao istu karticu, pa ne nastaje duplikat. Povratak u `studyCardIds` mijenja reviziju, a red počinje iznova uz svu povijest.
+- **Uređivač:** broj kartice i pregled nose oznaku „(moja)" ili „(izdvojena)". Pregled ima napomenu o izdvojenim karticama i gumb „Vrati u učenje" uz svaku. **Učenje:** oznaka „moja"; izdvojene kartice nisu u redu.
+
+Testovi (5 novih): sidra nakon umetanja i premještanja, lekcija izvan tečaja ostaje nepromijenjena; vraćanje zadržava `origin` i obnavlja sidra; nova kartica iz uređivača je vlastita i usidrena; izdvojena kartica je označena i vraća se u učenje; učenje preskače izdvojenu i pokazuje „moja". Provjere: Flutter puni skup **880/880**, `flutter analyze lib test` čist, `diff --check` čist. Sljedeće su 7b (verzije zbirke) i 7c (nadogradnja tečaja). `editor.dart`, `study.dart` i `home.dart` ostaju kod 026 do 7c. Bez pakiranja i objave.
