@@ -32,6 +32,10 @@ GitHub čuva poruke, ali **ne pokreće** ni jednog agenta. Korisnik pokreće age
 „Provjeri sandučić na GitHubu". Na početku svakog pokretanja agent čita:
 nove želje za sebe, vlastite želje u statusu `u-radu` ili `pitanje` i nove poruke upućene njemu.
 
+### Izravna predaja Claudeu (korisnikov nalog 2026-11-25)
+
+Nakon završetka rada ili pregleda koji traži Claudeov nastavak, Codex sam upisuje i šalje upute u odgovarajući postojeći razgovor Claudeove desktop aplikacije, kako bi Claude mogao nastaviti. Korisnik ne treba prenositi poruke. Uputa navodi konkretnu želju i poruku u sandučiću te sljedeći zadatak; GitHub sandučić ostaje izvor potpune predaje i komunikacije. Codex provjerava da je poruka poslana. Ako slanje nije dostupno ili dopušteno alatima, jasno navodi ograničenje i ne tvrdi da je Claude pokrenut.
+
 ## Izvor posla: mapa `zelje/`
 
 - Svaka datoteka u `zelje/` (osim `_PREDLOZAK.md`) je jedna želja korisnika.
