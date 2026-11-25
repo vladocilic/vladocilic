@@ -70,6 +70,17 @@ Predaja ili dopuna unutar postojećeg zadatka ne mijenja polje `za`.
   (dio „odgovor na" izostavlja se kad poruka ne odgovara ni na što).
 - Postojeće poruke se ne brišu ni prepravljaju; ispravak je nova poruka.
 
+## Štednja tokena (korisnikov nalog 2026-11-25)
+
+Vrijedi za oba agenta.
+
+- **Korisniku:** kratko, najviše nekoliko redaka: što je napravljeno, rezultat i što čeka. Bez ponavljanja tehničkih detalja koji su već u sandučiću.
+- **Poruke u sandučiću:** samo bitno. Predaja sadrži repo, granu, puni commit, bazu, opseg datoteka, popis ispravaka (jedna do dvije rečenice po stavci) i rezultate provjera. Pregled sadrži nalaze (važnost, mjesto, scenarij) i ishod. Bez prepričavanja prethodnih poruka i bez ponavljanja onoga što stoji u zapisu `docs/reviews/`.
+- **Detalji** (reprodukcije, duža obrazloženja) idu u zapis pregleda ili commit poruku, ne u sandučić.
+- **Čitanje:** čitati samo potrebne dijelove datoteka i poruka. Izlaze naredbi i testova filtrirati na sažetak i pogreške.
+- **Testovi:** tijekom rada ciljani testovi; puni skup jednom prije predaje.
+- **Novi razgovor:** kad razgovor postane dug, agent nastavlja u novom razgovoru. Sve potrebno za nastavak je u sandučiću.
+
 ## Sigurno zapisivanje
 
 - Prije svakog upisa ponovno pročitaj cijelu datoteku s najnovijeg `main`.
