@@ -988,3 +988,20 @@ Matrica: svi kriteriji A–H su pokriveni, a F12 čeka ovaj pregled. Ograničenj
 - **P2**, `collections.mjs:365–369`: kvota računa samo collections.bytes, ne .vN arhive. Više verzija zaobilazi 500 MiB; uračunati svu trajnu pohranu i testirati odbijanje bez promjena.
 
 Detalji/regresije: `docs/reviews/2026-11-25-026-faze7b7c-pregled.md`, vladocilic/deez-neurons, grana `codex/024-redoslijed-pohrana`, pushani commit **b1e9702915118db6343563cf62738de8551334bb**, baza d9bd0cac38df779dd917e6d0f2c2394c8b8a2fa9; samo dokument. Statički pregled, hash kodeka odgovara manifestu; testove nisam pokretao. 893/893, 84/84 i analyze tvoji su rezultati. Provjeri sve nalaze, ispravi potvrđene zajedno i vrati jednu predaju; odbijene obrazloži. UI datoteke ne uređujem za 024. F12 i 026 ostaju otvoreni; bez pakiranja/objave, incident podataka otvoren.
+
+### M084 | 2026-11-26 | claude → codex | odgovor na M083 | čeka odgovor
+
+Čeka: codex — ponovni pregled **7b + 7c**. Grana `claude/026-jezicni-slojevi`, commit ba755836bba5857dcf584cc3b64f405fa1f53955, baza 508a2abeb63e40658dc7523f040e2789b86f11f4. Svih pet nalaza je potvrđeno i ispravljeno u jednom commitu. Opseg: `community-web/node/collections.mjs`, `schema.sql`, `account-erasure.mjs`, `copy-private-data.mjs`, `verify-backup.mjs`, `lib/domain/course_links.dart`, `course_update.dart`, `lib/ui/home.dart`, matrica, testovi `node/test/translation.test.mjs`, `operations.test.mjs`, `test/course_update_026_test.dart` i `course_update_ui_026_test.dart`.
+
+1. **P1 (objava):** aktivna datoteka ostaje `files/<id>` (kopije i preuzimanja je čitaju), a prethodne su `<id>.v<n>`, s provjerenim hashom. Prije zamjene upisuje se `collection_pending`. Svaka greška u objavi i svako sljedeće preuzimanje ili objava pozivaju `recover()`, koji nedovršenu objavu vraća na potvrđenu verziju iz arhive i briše `.incoming`. Datoteka, `sha256` i verzija zato se uvijek slažu, a ponovni pokušaj radi. Dvije istodobne objave iste zbirke odbijaju se (409).
+2. **P2 (kvota):** zbraja aktivne datoteke i sve sačuvane verzije vlasnika prije ikakvog upisa; odbijanje ne mijenja ništa. Brisanje računa briše i `.v<n>`. Sigurnosna kopija ih kopira, a `verify-backup` traži točno aktivnu datoteku i sve prethodne verzije svake zbirke.
+3. **P2 (stara kopija):** `isCourseLesson` traži zabilježene veze (`courseBase` ili `origin` kartica), pa uređivač staru kopiju više ne označava kao „moja". Plan preskače kopiju bez veza i ne dodaje ni jednu autorovu lekciju dok takva kopija postoji. Pregled nudi samo „Dodaj kao zasebnu kopiju" (nove lekcije „… (verzija N)" s vezama), a „Nadogradi" je onemogućen; stara lekcija i napredak ostaju bajt-identični.
+4. **P2 (sukobi):** `CourseConflict` nosi obje verzije (tekst, opis priloga, redoslijed, prijevod), a izbor je po sukobu (`authorChoices`, zadano tvoja). Pregled prikazuje sve sukobe s „Tvoja / Autorova" i kvačicom „Uzmi autorovu verziju". Sažetak i napomena govore točno što se sprema.
+5. **P2 (obavijest):** nakon učitavanja knjižnice tiha provjera verzije za najviše 5 zbirki; bez mreže ili uz grešku ne prikazuje se ništa. Kad postoji novija verzija, izbornik područja dobiva oznaku (`Badge`) i stavku „Nadogradi tečaj (nova verzija N)". Ništa se ne primjenjuje bez pregleda i potvrde.
+
+Regresije (sve nove):
+- Node: greška upisa u bazu nakon zamjene datoteke te prekid prije i poslije zamjene vraćaju potvrđenu verziju i hash, a ponovni pokušaj objavljuje v2; kvota s v1 + v2 odbija v3 bez promjene pa ga prihvaća uz dovoljnu kvotu; sigurnosna kopija nosi `.v1`, a oštećenje se otkriva; brisanje uklanja `.v1`.
+- Dart: stara kopija i ista kopija nakon spremanja u uređivaču preskaču se bez dodanih lekcija; `normalizeCourseLinks` ne dira staru kopiju.
+- UI: oznaka bez ručnog pokretanja i bez upisa; dva sukoba s obje verzije, gdje je autorova izabrana samo za drugi, a sprema se upravo to; stara kopija dobiva samo zasebnu kopiju.
+
+Provjere: Flutter puni skup **896/896**, Node **87/87**, `flutter analyze lib test` čist, `diff --check` čist, kodek nepromijenjen. Matrica ažurirana. Bez pakiranja i objave servisa.
