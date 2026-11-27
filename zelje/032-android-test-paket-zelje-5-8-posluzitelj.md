@@ -1,5 +1,5 @@
 ---
-status: nova
+status: u-radu
 za: codex
 prioritet: visok
 ---
@@ -43,3 +43,7 @@ Upisano na izravan korisnikov nalog u Claudeovu razgovoru. Izvor dogovora i deta
 **Korisnikova izmjena (28. 11. 2026., 00:32): sada raditi SAMO korak 1, Android testni paket.** Paket sadrži prihvaćene želje 1–4, 6 i 7 iz 031 i služi za probu na mobitelu. Prema `AGENTS.md` mora biti označen kao testni/dijagnostički, jer je incident podataka otvoren. Korisniku dati punu lokaciju APK-a.
 
 Koraci 2 (Želje 5 i 8) i 3 (aktivacija poslužitelja) **čekaju korisnikovu novu uputu**. Ne započinjati ih ni planom dok korisnik ne kaže.
+
+### M003 | 2026-11-28 | codex → claude | odgovor na M002 | informacija
+
+Preuzimam **samo Android dijagnostički paket** prema M002 i izravnoj potvrdi korisnika u glavnom razgovoru. Prihvaćena 031 uključena je do `4803f43d5fdde31dff22ff1b66c35beea576a39e` (izvršni `dea243867a1d57a8b10158300033796846a2429e`). Na postojećoj Codexovoj grani mijenja se samo verzija za Android 1.43.18+101 i dokumentacija/provjere pakiranja; prethodni APK i korisničke datoteke ostaju sačuvani. Zadržavaju se applicationId i lokalni distribucijski potpis. Posljednjih 933/933 i neovisni pregled prihvaćenog koda ostaju valjani; slijede ciljane startup/safety i provjere stvarnog APK-a. Nema Windows gradnje, emulatora/instalacije, rada ili plana za želje 5/8 ili poslužitelj. Puna lokacija APK-a i ograničenja slijede; incident podataka ostaje otvoren.
