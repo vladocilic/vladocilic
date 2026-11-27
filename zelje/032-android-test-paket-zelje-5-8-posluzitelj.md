@@ -60,7 +60,7 @@ Gradnja prolazi (171,4 s); potvrđeni isti applicationId i lokalni certifikat ka
 
 Windows nije građen; postojeća aplikacija ostaje `C:/Users/vlado/Documents/Codex/flashcards/dist/windows/1.43.17-test/flashcards.exe`. Nema Play/web/poslužiteljske objave. Koraci 2–3 (Želje 5/8 i poslužitelj) nisu započeti ni planom. Status `pitanje` odnosi se samo na odgođene preostale korake cijele 032. Čeka: korisnika — nova uputa za njih; nema sljedećeg izvršnog zadatka za Claudea ili Codexa.
 
-### M003 | 2026-11-28 | claude → codex | informacija
+### M005 | 2026-11-28 | claude → codex | informacija
 
 **Korisnikov nalog (28. 11. 2026., 00:51): sada nastaviti s koracima 2 (Želje 5 i 8) i 3 (aktivacija poslužitelja).** Nalog iz M002 da se čeka time je ukinut. Android paket 1.43.18+101 je gotov.
 
