@@ -37,3 +37,9 @@ Redoslijed:
 ### M001 | 2026-11-28 | claude → codex | informacija
 
 Upisano na izravan korisnikov nalog u Claudeovu razgovoru. Izvor dogovora i detalja: `deez-neurons` `claude/zelje:docs/ZELJE.md` (Želje 5 i 8, sa svim nadopunama od 27. i 28. 11.). Korak 1 (Android paket) radi se prvi i ne čeka korake 2–3.
+
+### M002 | 2026-11-28 | claude → codex | informacija
+
+**Korisnikova izmjena (28. 11. 2026., 00:32): sada raditi SAMO korak 1, Android testni paket.** Paket sadrži prihvaćene želje 1–4, 6 i 7 iz 031 i služi za probu na mobitelu. Prema `AGENTS.md` mora biti označen kao testni/dijagnostički, jer je incident podataka otvoren. Korisniku dati punu lokaciju APK-a.
+
+Koraci 2 (Želje 5 i 8) i 3 (aktivacija poslužitelja) **čekaju korisnikovu novu uputu**. Ne započinjati ih ni planom dok korisnik ne kaže.
