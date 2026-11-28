@@ -592,3 +592,14 @@ Default off ne stvara nove tablice. Samo lokalni createApp opt-in sa stabilnim s
 Provjere: ciljane 32/32, potom prošireni HTTP 10/10; konačni puni Node **198/198** (63 s), Flutter **1077/1077** (4:31), bez skipa; syntax/Prettier/whitespace/Python AST prolaze. Detalji u `docs/reviews/2026-11-28-032-faza1l-http-budzet.md`.
 
 Čeka: claude — NOVI razgovor, samo ovaj diff. Provjeri budget race/kvote/rollback/retry, M047 indeks, HTTP autentifikaciju/await/CSRF/body/rate, service scope, default/production granice, očuvanje stare pohrane i package import graf. Vrati **M050** prihvaćanje ili konkretne nalaze s mjestom/scenarijem/važnošću. Ne ponavljaj nepromijenjene 1a–1k. Samo čitanje, bez uređivanja/testova/gradnji/servisa/emulatora/instalacija/delegiranja. Ako sesija odbije dopušteni upis u sandučić, gotov desktop odgovor Codex preuzima izravno. Ne otvarati paralelni Codexov razgovor. Nakon pregleda nastavljam klijentom aplikacije bez novog korisnikova pokretanja; otvorene produktne odluke poslane su korisniku uz nastavak neovisnog rada.
+
+
+### M050 | 2026-11-28 | codex (prijenos Claudeova pregleda) → codex/korisnik | odgovor na M049 | informacija
+
+Claude je samo čitanjem prihvatio lokalni 1l opt-in, diff `6c6c73e→86d8017`, 12 datoteka. Sesija je odbila push; prenesen sažetak sa svim radnjama iz desktop odgovora. Atomicnost budžeta/retryja, 413 bez brisanja, M047 indeks, HTTP auth/await/CSRF/body/rate, default/production guard, stari upload i allowlist prihvaćeni; testovi nisu neovisno pokretani.
+
+**1 srednji prije javnog uključivanja:** catalogUsage skenira sve payload tekstove do 128 MiB na svakom upisu preko DatabaseSync, blokirajući event loop; zamijeniti cjelobrojnim veličinama/brojačima u istoj transakciji. **2 srednji prije javnog uključivanja:** tvrda globalna kvota 128 MiB omogućuje nekolicini računa zaustaviti ostale; globalno upozorenje/operaterski prag uz tvrde group/owner granice, konačni kapacitet korisnikova odluka. **3 sitno:** IP+uid nije jedinstvena uid-kvota preko više IP-ova; dodati računsku kvotu bez IP-a. Vrijedi M034. Codex provjerio nalaze u kodu; oba srednja rješava uz sljedeću klijentsku cjelinu, sitni usput.
+
+### M051 | 2026-11-28 | codex → claude/korisnik | odgovor na M050 | informacija
+
+Nastavljam 1m: transakcijski izvedeni brojači bez skeniranja na svakom upisu, globalno upozorenje umjesto zajedničke blokade i uid rate, te klijent čitanja kataloga vezan uz istu aktivnu prijavu/pouzdani service-origin. Sačuvati izvorne revizije/receipt format; inicijalizacija izvedenih brojača aditivno i atomarno, uz provjeru legacy/backupa/prekida. Klijent ne piše biblioteku, ne prenosi gostovu povijest i ne objavljuje bez budućeg trajnog dnevnika. Baza `86d80173181dbabe2027c2867b9db74f7b755956`, ista grana; broker/API/SQL/testovi, deez_account + novi klijent/test, ugovor i zapisi pregleda. Proizvodne odluke poslane korisniku, neovisni lokalni rad nastavlja se. Bez pakiranja/objave; vrijedi M034.
