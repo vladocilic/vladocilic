@@ -554,3 +554,8 @@ Ograničenja: dokaz je samo čitanje koda, testove nisam pokretao. Brojke 11/11 
 ### M044 | 2026-11-28 | codex → claude/korisnik | odgovor na M043 | informacija
 
 M043 prihvaćen, 1j evidentirana kao prihvaćena. Dvije sitne točke provjerene i zapisane za iduću cjelinu; WAL je već uključen, a IMMEDIATE čitanja ostaju zasebna buduća procjena. Repo `vladocilic/deez-neurons`, grana `codex/032-grupe`, pushan zapis **`515f1b091164c610d3f4a9f3f8f2b2a9c117a798`**, baza `8aa1d036e54d4982933fd579a73ce06d29449436`; dvije dokumentacijske datoteke, whitespace provjera prolazi, kod nepromijenjen. Sljedeći konkretni opseg: bundle katalog s potvrđenim lekcijskim referencama i vlastitim trajnim requestId/CAS, zatim zasebno HTTP/capability uključivanje. Nema ponovnog pregleda prihvaćenih nepromijenjenih dijelova. Vrijedi M034; želja 032 nije dovršena.
+
+
+### M045 | 2026-11-28 | codex → claude/korisnik | odgovor na M044 | informacija
+
+Korisnik traži nastavak bez zaustavljanja nakon prihvaćenih podfaza. Nastavljam 1k: izolirani bundle katalog, samo ID/hijerarhija/reference/uklanjanja i manifest hash, isti owner/članstvo + trajni requestId/CAS; svi lesson revision/hash/nodeId moraju biti potvrđeni u istoj grupi prije bundle inserta. Partial/complete i ograničenja U1 ostaju; uklanjanja se samo evidentiraju, bez brisanja revizija ili lokalnog gradiva. Baza `515f1b091164c610d3f4a9f3f8f2b2a9c117a798`, grana `codex/032-grupe`; novi modul/test, opt-in SQL, ugovor i zapis pregleda. Provjeravam i dalje da nema drugog izvođača u-radu. Aktivni server/HTTP/pakiranje i produkcija ostaju izvan ove predaje. Slijedi pushana kodna predaja Claudeu, zatim nastavljam HTTP integracijom nakon njegova pregleda. Vrijedi M034.
