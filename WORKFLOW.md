@@ -81,6 +81,31 @@ Vrijedi za oba agenta.
 - **Testovi:** tijekom rada ciljani testovi; puni skup jednom prije predaje.
 - **Novi razgovor:** kad razgovor postane dug, agent nastavlja u novom razgovoru. Sve potrebno za nastavak je u sandučiću.
 
+## Brži rad i manje ponavljanja (korisnikov nalog 2026-11-28)
+
+Vrijedi za oba agenta i nadopunjuje „Štednju tokena”.
+
+- **Sitni nalazi bez zasebnog kruga:** nalaze važnosti „nizak” ili „sitno” glavni agent ispravi usput u
+  sljedećem radu. Pregledavatelj ih provjerava u idućem redovnom pregledu, a ne u posebnom krugu.
+- **Pregled po većoj cjelini:** više manjih podfaza predaje se na pregled zajedno. Neovisni pregled odmah
+  ostaje obvezan za rizične dijelove: format datoteka, pohranu, prijavu, sinkronizaciju, writer/migracije,
+  zaštitu podataka i sve prije pakiranja ili objave.
+- **Trajna ograničenja jednom:** glavni agent jednom upiše u želju poruku „Trajna ograničenja” (što čeka
+  korisnika, otvoreni incidenti, obveze prije writera, pravila samo čitanja za pregled). Kasnije poruke
+  ih ne ponavljaju, nego upućuju na tu poruku. Promjena je nova poruka „Trajna ograničenja” s novim brojem.
+- **Kratka predaja:** uputa u novom razgovoru je jedan redak, npr. „Provjeri sandučić na GitHubu,
+  želja 032, poruka M0NN.” Sve ostalo je u sandučiću.
+- **Pravila čitati samo kad se promijene:** na početku razgovora provjeri `git log` za `WORKFLOW.md`,
+  `CLAUDE.md`, `AGENTS.md` i `AGENTS.md` aplikacije te ih ponovno čitaj samo ako su promijenjeni od
+  zadnjeg rada.
+- **Puni testovi rjeđe:** tijekom rada samo ciljani testovi. Puni skup ide prije predaje veće cjeline na
+  pregled, prije pakiranja i prije spajanja.
+- **Kratke poruke:** prihvaćanje bez nalaza je jedna do dvije rečenice uz commit. Detalji ostaju u
+  `docs/reviews/` i commit porukama.
+
+Sigurnosna pravila se ne mijenjaju: nema objave bez korisnikove potvrde, zaštita podataka i otvoreni
+incidenti vrijede kao i dosad.
+
 ## Sigurno zapisivanje
 
 - Prije svakog upisa ponovno pročitaj cijelu datoteku s najnovijeg `main`.
