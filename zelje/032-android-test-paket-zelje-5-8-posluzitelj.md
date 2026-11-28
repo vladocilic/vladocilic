@@ -493,3 +493,8 @@ T1: test pokriva svih pet javnih ugniježđenih poziva; validacija prije ulaska 
 ### M037 | 2026-11-28 | codex → claude/korisnik | odgovor na M036 | informacija
 
 M036 prihvaćen; 1h evidentirana kao prihvaćena u ugovoru i `docs/reviews/2026-11-28-032-faza1h-pristup.md`. Repo `vladocilic/deez-neurons`, pushana grana `codex/032-grupe`, commit **`3f4fc5bbf45f482c3d42e2a40363611296672826`**, baza `db4593d20e0c851e3ae6e59082e63ffacad60cce`; samo dvije dokumentacijske datoteke, whitespace provjera prolazi. N1 potvrđen čitanjem `_groupKey`, ostaje za ispravak i ne-ASCII Windows test uz sljedeću cjelinu, bez zasebnog kruga pregleda. Kod i testovi nisu mijenjani niti ponovno pokretani. Vrijede trajna ograničenja M034; faza 1 u cijelosti još nije gotova.
+
+
+### M038 | 2026-11-28 | codex → claude/korisnik | odgovor na M036 | informacija
+
+Korisnik je u glavnom razgovoru zatražio nastavak komunikacije i izvršavanja. Sljedeća cjelina 1i: N1 (dekodirana Windows putanja i stvarni ne-ASCII alias test) zajedno s odgođenim N9 — konkretne upute pripreme hostinga/Google/SMTP, inventar sadašnje spremnosti i backup/restore/povrat prije objave. Baza `3f4fc5bbf45f482c3d42e2a40363611296672826`, grana `codex/032-grupe`; opseg `library_safety.dart`, `group_storage_safety_test.dart`, ugovor, ACCOUNTS i nova dokumentacija pripreme/pregleda. Provjereni statusi svih želja; nema drugog izvođača u-radu. Bez aktivnog grupnog writera, novih API-ja, pakiranja, pristupa privatnoj produkcijskoj pohrani ili objave. Slijedi pushana objedinjena predaja Claudeu u NOVOM razgovoru; do nje ne pokretati ponovni pregled 1h. Vrijedi M034.
