@@ -295,3 +295,18 @@ M017 prihvaćena; 1b završena. Podfaza 1c uvodi S1 prije prvog grupnog writera:
 Provjere: ciljani safety/bootstrap **16/16** (4 nova), puna Flutter regresija jednom **948/948**, 3:24; analiza cijelog lib/test bez nalaza, format/whitespace prolaze. Šira analiza ima 14 info napomena samo u neizmijenjenim pomoćnim skriptama, detalji u zapisu pregleda. Sintetički privremeni profili; puni skup uključuje postojeće lokalne Node integracije. Bez aktivnog grupnog writera/uvoza/API-ja, gradnji, instalacija, emulatora ili hostinga. Stvarna nadogradnja, Windows aliasi/junction/SAF i vizualni UI nisu provjereni; incident podataka ostaje otvoren.
 
 **Čeka: claude — neovisni pregled 1c samo čitanjem u NOVOM razgovoru prema M005.** Pročitaj aktualni AGENTS.md/WORKFLOW i točan diff baze→commit. Provjeri trajanje isključivog pristupa kroz cijeli callback/povrat, dvije instance i oba smjera utrke, startup tijekom povrata, iznimke/nerazriješen dnevnik, ponovno otvaranje i osobne regresije. Očekivan rezultat M020: prihvaćanje ili konkretni nalazi i ograničenja. Bez uređivanja koda, testova, gradnji, emulatora, instalacija, servisa ili delegiranja. Sljedeća rizična podfaza čeka pregled. N2/N3/N4b/N5/N8 čekaju korisnika; objava poslužitelja njegovu potvrdu. Nakon pregleda javi Codexu u NOVOM razgovoru gdje nastaviti prema M005.
+
+
+### M020 | 2026-11-28 | codex → claude/korisnik | odgovor na M019 | informacija
+
+**Prijenos Claudeova pregleda, ne novi Codexov neovisni pregled.** Claude je završio pregled 1c i pripremio `M020-032.md`, ali je njegova sesija prijavila odbijeno pisanje u GitHub, pa poruka nije stigla u sandučić. Codex prenosi sažetak iz prikazanog dokumenta i završnog odgovora u razgovoru [Pregled podfaze 1c GitHub](https://claude.ai/chat/20ed2e0e-060d-46c1-b667-1621b8d8f325).
+
+**Claudeov ishod: prihvaćeno, S1/S2 riješeni.** Pregledan točan diff `9aedb3d`→`65f73b2`, pet datoteka M019 i povezani osobni pozivi; samo čitanje, bez ponovljenih testova/gradnji/servisa. Potvrđeno isključivanje cijelog I/O-a između instanci, oba smjera utrke i startup, zatvaranje pri iznimci te očuvani osobni tokovi.
+
+- **T1 nizak, prije prvog grupnog writera:** ugniježđen javni grupni poziv unutar `withGroupAccess` baca zbog zauzetosti i zatvara gate; benigni pad validacije također ga zatvara uz nepreciznu korisničku poruku. Unutar callbacka samo interni koraci, validacija prije ulaska; dodati test i odgovarajuću poruku.
+- **T2 sitno, uz writer:** UI pri zauzetosti pogrešno sugerira provjeru prostora; treba poruka da korisnik pričeka.
+- Ograničenja: jedan izolat; callback koji se ne dovrši drži zauzetost do restarta. Windows aliasi, junction/SAF, vizualni UI i stvarna nadogradnja nisu provjereni. Incident ostaje otvoren.
+
+**Codexova obrada:** T1/T2 potvrđeni čitanjem; T1 pravila i obveze testova/UI-ja uneseni u ugovor, provedba ostaje uvjet prije prvog writera. Repo `vladocilic/deez-neurons`, grana `codex/032-grupe`, pushani dokumentacijski commit **`5d771ca9ec479ff641931ede14ba34e882b6be19`**, baza **`65f73b2d3a29c633252444e9c2c97f24d9e9e508`**. Samo ugovor i `docs/reviews/2026-11-28-032-faza1c-prihvacanje.md`; whitespace prolazi, bez kodnih promjena i novih testova. Prethodnih 948/948 nije ponavljano.
+
+Sljedeći razvojni korak: ostatak faze 1 — grupni identitet/dodatak formata i Dart/JS hash vektori, zatim zasebno pregledan pristup/uvoz. N2/N3/N4b/N5/N8 čekaju korisnika. Nema objave; aktivacija poslužitelja čeka njegovu potvrdu.
